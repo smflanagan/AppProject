@@ -53,7 +53,7 @@ public class PickGalleryImage extends Activity {
                 cursor.close();
                 //ImageView imgView = (ImageView) findViewById(R.id.imgView);
 
-                imgView.setImageBitmap(BitmapFactory.decodeFile(imgString));
+               // imgView.setImageBitmap(BitmapFactory.decodeFile(imgString));
 
             }
         } catch (Exception e) {
