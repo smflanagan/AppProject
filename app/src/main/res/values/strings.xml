@@ -3,5 +3,19 @@
     <string name="add_item">Add Item</string>
     <string name="add_bundle">Add Bundle</string>
     <string name="username">Enter Username</string>
+<<<<<<< Updated upstream
     <string name="title_activity_add_item">add_item</string>
+=======
+    <string name="location">Enter Location</string>
+    <string name="item_name">Enter Item Name</string>
+    <string name="item_cost">Enter Item Cost</string>
+    <string name="load_picture">Load Picture</string>
+    <string name="img_view">imgView</string>
+    <string name="create_item">Create Item</string>
+    <string name="seller_name">default name</string>
+    <string name="view_item_name">default item name</string>
+    <string name="seller_location">default location</string>
+    <string name="view_item_cost">default cost</string>
+    <string name="add_to_cart">Add to Cart</string>
+>>>>>>> Stashed changes
 </resources>
