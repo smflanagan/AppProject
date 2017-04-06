@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">App Project</string>
     <string name="username">Enter Username</string>
+    <string name="location">Enter Location</string>
+    <string name="item_name">Enter Item Name</string>
+    <string name="item_cost">Enter Item Cost</string>
+    <string name="load_picture">Load Picture</string>
+    <string name="img_view">imgView</string>
 </resources>
