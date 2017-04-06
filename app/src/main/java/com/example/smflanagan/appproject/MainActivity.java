@@ -14,12 +14,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    Button addItem = (Button) findViewById(R.id.AddItem);
-    addItem.setOnClickListener(new View.OnCLickListener)
     public void onClick(View view)
     {
-        startActivity(new Intent(MainActivity.this, add_item.class));
-
-        //jiji
+        Intent intent = new Intent(this, add_item.class);
+        startActivity(intent);
     }
 }
