@@ -51,9 +51,9 @@ public class PickGalleryImage extends Activity {
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgString = cursor.getString(columnIndex);
                 cursor.close();
-                //ImageView imgView = (ImageView) findViewById(R.id.imgView);
+                ImageView imgView = (ImageView) findViewById(R.id.imgView);
 
-               // imgView.setImageBitmap(BitmapFactory.decodeFile(imgString));
+               imgView.setImageBitmap(BitmapFactory.decodeFile(imgString));
 
             }
         } catch (Exception e) {
