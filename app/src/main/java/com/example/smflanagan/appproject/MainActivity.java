@@ -14,9 +14,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void onClick(View view)
+    public void toAddItem(View view)
     {
         Intent intent = new Intent(this, add_item.class);
+        startActivity(intent);
+    }
+
+    public void toAddBundle(View view)
+    {
+        Intent intent = new Intent(this, add_bundle.class);
         startActivity(intent);
     }
 }

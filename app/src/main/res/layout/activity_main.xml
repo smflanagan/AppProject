@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="onClick"
+                android:onClick="toAddItem"
                 android:text="@string/add_item"
                 tools:ignore="ButtonStyle" />
 
@@ -34,6 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:onClick="toAddBundle"
                 android:text="@string/add_bundle"
                 tools:ignore="ButtonStyle" />
         </LinearLayout>

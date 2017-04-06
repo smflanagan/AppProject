@@ -15,5 +15,4 @@ public class add_item extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
     }
-
 }
