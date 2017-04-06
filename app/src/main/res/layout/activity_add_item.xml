@@ -1,35 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <EditText
         android:id="@+id/Username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginTop="25dp"
         android:inputType="textPersonName"
-        android:text="@string/username"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:hint="@string/username" />
 
     <EditText
         android:id="@+id/Location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/Username"
         android:layout_marginTop="12dp"
         android:inputType="textPostalAddress"
-        android:text="@string/location"
-        android:layout_below="@+id/Username"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:hint="@string/location"
+        tools:text="@string/location" />
 
     <EditText
         android:id="@+id/ItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
-        android:text="@string/item_name"
+        android:hint="@string/item_name"
         android:layout_below="@+id/Location"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -39,7 +41,7 @@
         android:id="@+id/ItemCost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/item_cost"
+        android:hint="@string/item_cost"
         android:layout_below="@+id/ItemName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
