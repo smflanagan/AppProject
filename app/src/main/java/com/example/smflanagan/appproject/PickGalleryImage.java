@@ -8,6 +8,7 @@ package com.example.smflanagan.appproject;
         import android.net.Uri;
         import android.os.Bundle;
         import android.provider.MediaStore;
+        import android.util.Log;
         import android.view.View;
         import android.widget.ImageView;
         import android.widget.Toast;
@@ -18,12 +19,14 @@ public class PickGalleryImage extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("Melissa", "Hi in the onCreate method");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.new_item);
     }
 
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
+        Log.i("Melissa", "Hi in the loadImagefromGallery method");
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         // Start the Intent
