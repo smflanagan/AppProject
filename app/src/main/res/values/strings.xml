@@ -5,7 +5,7 @@
     <string name="username">Enter Username</string>
 
     <string name="title_activity_add_item">add_item</string>
-    <string name="title_activity_add_bundle">add_item</string>
+    <string name="title_activity_add_bundle">add_bundle</string>
 
     <string name="location">Enter Location</string>
     <string name="item_name">Enter Item Name</string>
