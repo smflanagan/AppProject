@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.smflanagan.appproject">
-
+//comment
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
@@ -22,6 +22,12 @@
         <activity
             android:name=".add_item"
             android:label="@string/title_activity_add_item"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".add_bundle"
+            android:label="@string/title_activity_add_bundle"
             android:theme="@style/AppTheme.NoActionBar">
 
         </activity>

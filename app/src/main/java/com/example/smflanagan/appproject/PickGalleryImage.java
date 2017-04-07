@@ -1,33 +1,35 @@
 package com.example.smflanagan.appproject;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-/**
- * Created by melissafarraher on 3/29/17.
- */
+        import android.app.Activity;
+        import android.content.Intent;
+        import android.database.Cursor;
+        import android.graphics.BitmapFactory;
+        import android.net.Uri;
+        import android.os.Bundle;
+        import android.provider.MediaStore;
+        import android.util.Log;
+        import android.view.View;
+        import android.widget.ImageView;
+        import android.widget.Toast;
 
 public class PickGalleryImage extends Activity {
     private static int RESULT_LOAD_IMG = 1;
-    String imgString;
+    String imgDecodableString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.i("Melissa", "Hi in the onCreate method");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.new_item);
     }
 
     public void loadImagefromGallery(View view) {
+        // Create intent to Open Image applications like Gallery, Google Photos
+        Log.i("Melissa", "Hi in the loadImagefromGallery method");
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        // Start the Intent
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
     }
 
@@ -35,26 +37,31 @@ public class PickGalleryImage extends Activity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
-            // When an Image is selected
+            // When an Image is picked
             if (requestCode == RESULT_LOAD_IMG && resultCode == RESULT_OK
                     && null != data) {
-                // Get the Image from gallery
+                // Get the Image from data
 
                 Uri selectedImage = data.getData();
                 String[] filePathColumn = { MediaStore.Images.Media.DATA };
 
+                // Get the cursor
                 Cursor cursor = getContentResolver().query(selectedImage,
                         filePathColumn, null, null, null);
-
+                // Move to first row
                 cursor.moveToFirst();
 
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                imgString = cursor.getString(columnIndex);
+                imgDecodableString = cursor.getString(columnIndex);
                 cursor.close();
                 ImageView imgView = (ImageView) findViewById(R.id.imgView);
+                // Set the Image in ImageView after decoding the String
+                imgView.setImageBitmap(BitmapFactory
+                        .decodeFile(imgDecodableString));
 
-               imgView.setImageBitmap(BitmapFactory.decodeFile(imgString));
-
+            } else {
+                Toast.makeText(this, "You haven't picked Image",
+                        Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
@@ -62,5 +69,6 @@ public class PickGalleryImage extends Activity {
         }
 
     }
+
 }
 
