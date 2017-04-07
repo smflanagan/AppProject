@@ -12,7 +12,8 @@
         android:layout_height="495dp"
         android:orientation="horizontal"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints">
 
         <Button
             android:id="@+id/button"
@@ -20,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="toAddItem"
-            android:text="@string/add_item" />
+            android:text="@string/add_item"
+            tools:ignore="InefficientWeight" />
     </LinearLayout>
 </android.support.constraint.ConstraintLayout>
