@@ -67,6 +67,12 @@ public class add_item extends AppCompatActivity {
 
     }
 
+    public void toViewItem(View view)
+    {
+        Intent intent = new Intent(this, created_item.class);
+        startActivity(intent);
+    }
+
 }
 
 
