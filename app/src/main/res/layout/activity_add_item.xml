@@ -70,6 +70,7 @@
         android:layout_below="@+id/LoadPicture"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
+        android:onClick="toViewItem"
         android:text="@string/create_item" />
 
 
