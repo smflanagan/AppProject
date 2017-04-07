@@ -27,7 +27,6 @@ public class add_item extends AppCompatActivity {
     }
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
-        Log.i("Melissa", "Hi in the loadImagefromGallery method");
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
                 android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         // Start the Intent
