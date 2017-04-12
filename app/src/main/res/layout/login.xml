@@ -73,4 +73,15 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:id="@+id/CreateNewAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/CancelButton"
+        android:layout_marginTop="29dp"
+        android:text="@string/new_account" />
+
+
 </RelativeLayout>
