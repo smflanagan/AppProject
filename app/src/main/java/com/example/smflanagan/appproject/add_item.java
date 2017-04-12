@@ -95,6 +95,8 @@ public class add_item extends AppCompatActivity {
         ItemData test = new ItemData(name, cost, seller, location);
 
         toViewItem(view);
+
+        //ayy lmao
     }
 
 }
