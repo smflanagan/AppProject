@@ -3,6 +3,7 @@ package com.example.smflanagan.appproject;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -77,10 +78,21 @@ public class add_item extends AppCompatActivity {
     public void createItem(View view)
     {
         EditText item_name = (EditText) findViewById(R.id.ItemName);
-        String str = item_name.getText().toString();
+        String name = item_name.getText().toString();
 
+        EditText item_cost = (EditText) findViewById(R.id.ItemCost);
+        String cost_string = item_cost.getText().toString();
+        double cost = Double.parseDouble(cost_string);
 
-        ItemData test = new ItemData();
+        EditText seller_name = (EditText) findViewById(R.id.Username);
+        String seller = seller_name.getText().toString();
+
+        EditText seller_location = (EditText) findViewById(R.id.Location);
+        String location = seller_location.getText().toString();
+
+        Image example = new Image();
+
+        ItemData test = new ItemData(name, cost, seller, location, example);
     }
 
 }
