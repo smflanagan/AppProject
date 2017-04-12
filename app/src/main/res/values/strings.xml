@@ -18,5 +18,8 @@
     <string name="seller_location">default location</string>
     <string name="view_item_cost">default cost</string>
     <string name="add_to_cart">Add to Cart</string>
+    <string name="login">Login</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
