@@ -28,13 +28,13 @@ public class ItemData {
     private static int RESULT_LOAD_IMG = 1;
 
 
-    public ItemData(String name, double cost, String seller, String location, Image image) {
+    public ItemData(String name, double cost, String seller, String location /*, Image image */) {
 
         item_name = name;
         item_cost = cost;
         seller_name = seller;
         location_data = location;
-        item_image = image;
+        //item_image = image;
 
     }
 
