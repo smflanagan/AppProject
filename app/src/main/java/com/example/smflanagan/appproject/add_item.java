@@ -74,9 +74,12 @@ public class add_item extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void createItem()
+    public void createItem(View view)
     {
-        (EditText) name = (EditText) findViewbyId(R.id.ItemName) ;
+        EditText item_name = (EditText) findViewById(R.id.ItemName);
+        String str = item_name.getText().toString();
+
+
         ItemData test = new ItemData();
     }
 
