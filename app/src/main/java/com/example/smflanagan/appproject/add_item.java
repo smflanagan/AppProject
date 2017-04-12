@@ -93,6 +93,8 @@ public class add_item extends AppCompatActivity {
         Image example = new Image();
 
         ItemData test = new ItemData(name, cost, seller, location, example);
+
+        toViewItem(view);
     }
 
 }
