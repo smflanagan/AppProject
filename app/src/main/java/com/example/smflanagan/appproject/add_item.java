@@ -9,6 +9,7 @@ import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -71,6 +72,12 @@ public class add_item extends AppCompatActivity {
     {
         Intent intent = new Intent(this, created_item.class);
         startActivity(intent);
+    }
+
+    public void createItem()
+    {
+        (EditText) name = (EditText) findViewbyId(R.id.ItemName) ;
+        ItemData test = new ItemData();
     }
 
 }
