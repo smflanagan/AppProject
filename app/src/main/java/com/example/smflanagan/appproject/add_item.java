@@ -18,6 +18,7 @@ public class add_item extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
+    public ItemData test;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +73,7 @@ public class add_item extends AppCompatActivity {
     public void toViewItem(View view)
     {
         Intent intent = new Intent(this, created_item.class);
+        //intent.putExtra()
         startActivity(intent);
     }
 
@@ -92,11 +94,9 @@ public class add_item extends AppCompatActivity {
 
        // Image example = new Image();
 
-        ItemData test = new ItemData(name, cost, seller, location);
+        test = new ItemData(name, cost, seller, location);
 
         toViewItem(view);
-
-        //ayy lmao
     }
 
 }
