@@ -23,5 +23,9 @@
     <string name="cancel">Cancel</string>
     <string name="register">Register</string>
     <string name="new_account">Create New Account</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="create_account" />
+    <string name="create_newaccount">Create Account</string>
 
 </resources>
