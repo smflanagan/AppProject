@@ -20,7 +20,7 @@ public class created_item extends AppCompatActivity {
         String name = test.getItemName();
         TextView findViewById(R.id.ItemNameView)
 
-                .setText(name);
+                f.setText(name);
 
     }
 
