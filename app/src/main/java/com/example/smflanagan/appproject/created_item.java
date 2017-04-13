@@ -2,6 +2,10 @@ package com.example.smflanagan.appproject;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import static com.example.smflanagan.appproject.R.string.item_name;
 
 public class created_item extends AppCompatActivity {
 
@@ -14,6 +18,10 @@ public class created_item extends AppCompatActivity {
     public void displayItemName(ItemData test)
     {
         String name = test.getItemName();
+        TextView findViewById(R.id.ItemNameView)
+
+                .setText(name);
+
     }
 
     public void displayItemCost(ItemData test)

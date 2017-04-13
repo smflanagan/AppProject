@@ -3,12 +3,10 @@ package com.example.smflanagan.appproject;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -79,7 +77,7 @@ public class add_item extends AppCompatActivity {
 
     public void createItem(View view)
     {
-        EditText item_name = (EditText) findViewById(R.id.ItemName);
+        EditText item_name = (EditText) findViewById(R.id.ItemNameView);
         String name = item_name.getText().toString();
 
         EditText item_cost = (EditText) findViewById(R.id.ItemCost);
