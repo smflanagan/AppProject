@@ -31,7 +31,6 @@ public class created_item extends AppCompatActivity {
     {
         final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
         item_name.setText(name);
-
     }
 
     public void displayItemCost(ItemData test)
