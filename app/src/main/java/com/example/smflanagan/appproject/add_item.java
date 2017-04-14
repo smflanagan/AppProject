@@ -16,7 +16,11 @@ public class add_item extends AppCompatActivity {
 
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
-    public ItemData test;
+    public String name;
+    public String cost_string;
+    public double cost;
+    public String seller;
+    public String location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,28 +75,31 @@ public class add_item extends AppCompatActivity {
     public void toViewItem(View view)
     {
         Intent intent = new Intent(this, created_item.class);
-        //intent.putExtra()
+        intent.putExtra("name", name);
+        intent.putExtra("cost_string", cost_string);
+        intent.putExtra("seller", seller);
+        intent.putExtra("location", location);
         startActivity(intent);
     }
 
     public void createItem(View view)
     {
         EditText item_name = (EditText) findViewById(R.id.ItemNameView);
-        String name = item_name.getText().toString();
+        name = item_name.getText().toString();
 
         EditText item_cost = (EditText) findViewById(R.id.ItemCost);
-        String cost_string = item_cost.getText().toString();
-        double cost = Double.parseDouble(cost_string);
+        cost_string = item_cost.getText().toString();
+        cost = Double.parseDouble(cost_string);
 
         EditText seller_name = (EditText) findViewById(R.id.Username);
-        String seller = seller_name.getText().toString();
+        seller = seller_name.getText().toString();
 
         EditText seller_location = (EditText) findViewById(R.id.Location);
-        String location = seller_location.getText().toString();
+        location = seller_location.getText().toString();
 
        // Image example = new Image();
 
-        test = new ItemData(name, cost, seller, location);
+        ItemData test = new ItemData(name, cost, seller, location);
 
         toViewItem(view);
     }

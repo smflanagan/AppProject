@@ -9,18 +9,28 @@ import static com.example.smflanagan.appproject.R.string.item_name;
 
 public class created_item extends AppCompatActivity {
 
+    public String name;
+    public String cost_string;
+    public double cost;
+    public String seller;
+    public String location;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_created_item);
+        Bundle bundle = getIntent().getExtras();
+        name = bundle.getString("name");
+        cost_string = bundle.getString("cost_string");
+        cost = Double.parseDouble(cost_string);
+        seller = bundle.getString("seller");
+        location = bundle.getString("location");
     }
 
     public void displayItemName(ItemData test)
     {
-        String name = test.getItemName();
-        TextView findViewById(R.id.ItemNameView)
-
-                f.setText(name);
+        TextView findViewById(R.id.ItemNameView);
+            f.setText(name);
 
     }
 

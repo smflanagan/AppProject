@@ -16,7 +16,7 @@
         android:textAppearance="@android:style/TextAppearance.Medium" />
 
     <TextView
-        android:id="@+id/ItemName"
+        android:id="@+id/ItemNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/SellerName"
@@ -30,9 +30,9 @@
         android:id="@+id/SellerLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemName"
-        android:layout_alignStart="@+id/ItemName"
-        android:layout_below="@+id/ItemName"
+        android:layout_alignLeft="@+id/ItemNameView"
+        android:layout_alignStart="@+id/ItemNameView"
+        android:layout_below="@+id/ItemNameView"
         android:layout_marginTop="37dp"
         android:text="@string/seller_location"
         android:textAppearance="@android:style/TextAppearance.Medium" />

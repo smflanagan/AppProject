@@ -25,7 +25,7 @@
         android:layout_alignParentStart="true" />
 
     <EditText
-        android:id="@+id/ItemName"
+        android:id="@+id/ItemNameView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/item_cost"
-        android:layout_below="@+id/ItemName"
+        android:layout_below="@+id/ItemNameView"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="13dp" />
