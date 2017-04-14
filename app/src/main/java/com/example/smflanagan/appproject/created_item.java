@@ -29,8 +29,8 @@ public class created_item extends AppCompatActivity {
 
     public void displayItemName(ItemData test)
     {
-        TextView findViewById(R.id.ItemNameView);
-            f.setText(name);
+        final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
+        item_name.setText(name);
 
     }
 
