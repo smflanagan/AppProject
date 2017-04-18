@@ -27,24 +27,13 @@
             android:text="@string/enter_email" />
 
         <EditText
-            android:id="@+id/Username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/EnterEmail"
-            android:layout_marginTop="60dp"
-            android:inputType="textPersonName"
-            android:text="@string/username" />
-
-        <EditText
             android:id="@+id/Password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="47dp"
             android:inputType="textPassword"
             android:text="@string/enter_password"
-            android:layout_below="@+id/Username"
+            android:layout_below="@+id/EnterEmail"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -52,10 +41,11 @@
             android:id="@+id/CreateAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="61dp"
+            android:text="@string/create_newaccount"
             android:layout_below="@+id/Password"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="148dp"
-            android:text="@string/create_newaccount" />
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>

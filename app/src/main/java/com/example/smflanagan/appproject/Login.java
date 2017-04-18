@@ -28,7 +28,7 @@ public class Login extends Activity {
         setContentView(R.layout.activity_main);
 
         b1 = (Button)findViewById(R.id.button);
-        ed1 = (EditText)findViewById(R.id.Username);
+        ed1 = (EditText)findViewById(R.id.Email);
         ed2 = (EditText)findViewById(R.id.Password);
 
         b2 = (Button)findViewById(R.id.CancelButton);

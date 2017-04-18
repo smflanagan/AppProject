@@ -25,7 +25,7 @@
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:id="@+id/Username"
+        android:id="@+id/Email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -34,8 +34,8 @@
         android:layout_marginTop="63dp"
         android:focusable="true"
         android:hint="@string/username"
-        android:inputType="textPersonName"
-        android:text="@string/username" />
+        android:inputType="textEmailAddress|textPersonName"
+        android:text="@string/enter_email" />
 
     <EditText
         android:id="@+id/Password"
@@ -43,7 +43,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Username"
+        android:layout_below="@+id/Email"
         android:layout_marginTop="23dp"
         android:ems="10"
         android:hint="@string/enter_password"
