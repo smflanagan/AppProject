@@ -74,12 +74,11 @@ public class add_item extends AppCompatActivity {
 
     public void toViewItem(View view)
     {
-        Bundle bund = new Bundle();
-        bund.putString("name", name);
-        bund.putString("cost_string", cost_string);
-        bund.putString("seller", seller);
-        bund.putString("location", location);
-        Intent intent = new Intent(this, created_item.class).putExtras(bund);
+        Intent intent = new Intent(this, created_item.class);
+        //intent.putExtra("name", name);
+        //intent.putExtra("cost_string", cost_string);
+        //intent.putExtra("seller", seller);
+        //intent.putExtra("location", location);
         startActivity(intent);
     }
 
@@ -98,7 +97,7 @@ public class add_item extends AppCompatActivity {
         EditText seller_location = (EditText) findViewById(R.id.Location);
         location = seller_location.getText().toString();
 
-       // Image example = new Image();;
+       // Image example = new Image();
 
         ItemData test = new ItemData(name, cost, seller, location);
 
