@@ -22,12 +22,13 @@
         <activity
             android:name=".add_item"
             android:label="@string/title_activity_add_item"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".add_bundle"
             android:label="@string/title_activity_add_bundle"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".created_item"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".created_item" />
+        <activity android:name=".login_screen"></activity>
     </application>
 
 </manifest>
