@@ -92,7 +92,7 @@ public class add_item extends AppCompatActivity {
         cost_string = item_cost.getText().toString();
         cost = Double.parseDouble(cost_string);
 
-        EditText seller_name = (EditText) findViewById(R.id.Email);
+        EditText seller_name = (EditText) findViewById(R.id.Username);
         seller = seller_name.getText().toString();
 
         EditText seller_location = (EditText) findViewById(R.id.Location);
