@@ -74,11 +74,12 @@ public class add_item extends AppCompatActivity {
 
     public void toViewItem(View view)
     {
-        Intent intent = new Intent(this, created_item.class);
-        intent.putExtra("name", name);
-        intent.putExtra("cost_string", cost_string);
-        intent.putExtra("seller", seller);
-        intent.putExtra("location", location);
+        Bundle bund = new Bundle();
+        bund.putString("name", name);
+        bund.putString("cost_string", cost_string);
+        bund.putString("seller", seller);
+        bund.putString("location", location);
+        Intent intent = new Intent(this, created_item.class).putExtras(bund);
         startActivity(intent);
     }
 
@@ -91,7 +92,7 @@ public class add_item extends AppCompatActivity {
         cost_string = item_cost.getText().toString();
         cost = Double.parseDouble(cost_string);
 
-        EditText seller_name = (EditText) findViewById(R.id.Username);
+        EditText seller_name = (EditText) findViewById(R.id.Email);
         seller = seller_name.getText().toString();
 
         EditText seller_location = (EditText) findViewById(R.id.Location);

@@ -2,6 +2,7 @@ package com.example.smflanagan.appproject;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -18,19 +19,26 @@ public class created_item extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_created_item);
+        Log.i("jack","sean");
         Bundle bundle = getIntent().getExtras();
+        if (bundle==null)
+            Log.i("jack","null");
         name = bundle.getString("name");
+        Log.i("jack",name);
         cost_string = bundle.getString("cost_string");
+        Log.i("jack",cost_string);
         cost = Double.parseDouble(cost_string);
         seller = bundle.getString("seller");
+        Log.i("jack",seller);
         location = bundle.getString("location");
+        Log.i("jack",location);
+        setContentView(R.layout.activity_created_item);
     }
 
     public void displayItemName(ItemData test)
     {
-        final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
-        item_name.setText(name);
+        //final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
+        //item_name.setText(name);
     }
 
     public void displayItemCost(ItemData test)
