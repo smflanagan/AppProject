@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Created by smflanagan on 3/29/2017.
- * Added support for adding and remocing items from a bundle
+ * Added support for adding and removing items from a bundle
  */
 
 public class BundleData {
