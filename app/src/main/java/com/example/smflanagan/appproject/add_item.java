@@ -98,7 +98,7 @@ public class add_item extends AppCompatActivity {
         EditText seller_location = (EditText) findViewById(R.id.Location);
         location = seller_location.getText().toString();
 
-       // Image example = new Image();
+       // Image example = new Image();;
 
         ItemData test = new ItemData(name, cost, seller, location);
 
