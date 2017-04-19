@@ -24,60 +24,11 @@
         android:layout_below="@+id/Login"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:id="@+id/Username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/AppName"
-        android:layout_marginTop="63dp"
-        android:focusable="true"
-        android:hint="@string/username"
-        android:inputType="textEmailAddress|textPersonName"
-        android:text="@string/enter_email" />
+    <com.google.android.gms.common.SignInButton
+        android:id="@+id/sign_in_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/Password"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/Username"
-        android:layout_marginTop="23dp"
-        android:ems="10"
-        android:hint="@string/enter_password"
-        android:inputType="textPassword"
-        android:text="@string/enter_password" />
-
-    <Button
-        android:id="@+id/LoginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="117dp"
-        android:text="@string/login"
-        android:layout_below="@+id/Password"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:id="@+id/CancelButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/cancel"
-        android:layout_below="@+id/LoginButton"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:id="@+id/CreateNewAccount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/CancelButton"
-        android:layout_marginTop="29dp"
-        android:text="@string/new_account" />
 
 
 </RelativeLayout>
