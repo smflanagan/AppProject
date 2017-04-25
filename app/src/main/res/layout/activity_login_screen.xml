@@ -9,14 +9,14 @@
     <RelativeLayout
         android:layout_width="585dp"
         android:layout_height="810dp"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteX="-167dp"
+        tools:layout_editor_absoluteY="-69dp">
 
         <TextView
             android:id="@+id/AppName"
             android:layout_width="112dp"
             android:layout_height="41dp"
-            android:layout_marginTop="103dp"
+            android:layout_marginTop="74dp"
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             tools:layout_editor_absoluteX="243dp"
@@ -28,12 +28,34 @@
             android:id="@+id/sign_in_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
             tools:layout_editor_absoluteX="242dp"
             tools:layout_editor_absoluteY="213dp"
-            android:layout_marginTop="84dp"
             android:layout_below="@+id/AppName"
-            android:layout_alignLeft="@+id/AppName"
-            android:layout_alignStart="@+id/AppName" />
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:id="@+id/sign_out_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/sign_in_button"
+            android:layout_marginLeft="29dp"
+            android:layout_marginStart="29dp"
+            android:layout_toEndOf="@+id/sign_in_button"
+            android:layout_toRightOf="@+id/sign_in_button"
+            android:text="@string/sign_out" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/sign_out_button"
+            android:layout_alignStart="@+id/sign_out_button"
+            android:layout_alignTop="@+id/AppName"
+            android:layout_marginLeft="60dp"
+            android:layout_marginStart="60dp"
+            android:text="TextView"
+            tools:text="@string/login_status" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

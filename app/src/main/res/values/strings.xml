@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">App Project</string>
     <string name="add_item">Add Item</string>
-    <string name="add_bundle">New Bundle</string>
+    <string name="add_bundle">Add Bundle</string>
     <string name="username">Enter Username</string>
 
     <string name="title_activity_add_item">add_item</string>
@@ -29,5 +29,10 @@
     <string name="create_newaccount">Create Account</string>
     <string name="my_items">My Items</string>
     <string name="my_bundles">My Bundles</string>
+    <string name="signed_in_fmt">SignedIn</string>
+    <string name="loading">Loading</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="login_status">Signed Out</string>
+    <string name="signed_out">Signed Out</string>
 
 </resources>
