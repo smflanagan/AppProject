@@ -27,8 +27,13 @@
             android:name=".add_bundle"
             android:label="@string/title_activity_add_bundle"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".created_item" />
-        <activity android:name=".login_screen"></activity>
+        <activity
+            android:name=".created_item" />
+        <activity
+            android:name=".login_screen" />
+        <uses-feature
+            android:name="android.hardware.camera"
+            android:required="true" />
     </application>
 
 </manifest>
