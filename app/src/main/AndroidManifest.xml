@@ -35,5 +35,4 @@
             android:name="android.hardware.camera"
             android:required="true" />
     </application>
-
 </manifest>
