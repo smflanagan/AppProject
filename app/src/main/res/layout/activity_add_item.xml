@@ -50,8 +50,10 @@
     <ImageView
         android:id="@+id/imgView"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/img_view" />
+        android:layout_height="match_parent"
+        android:contentDescription="@string/img_view"
+        android:layout_below="@+id/ItemCost"
+        android:layout_above="@+id/LoadPicture" />
 
     <Button
         android:id="@+id/LoadPicture"
