@@ -10,42 +10,45 @@ import static com.example.smflanagan.appproject.R.string.item_name;
 
 public class created_item extends AppCompatActivity {
 
-    public String name;
-    public String cost_string;
-    public double cost;
-    public String seller;
-    public String location;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String name;
+        String cost;
+        String seller;
+        String location;
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("name");
-        cost_string = bundle.getString("cost_string");
-        cost = Double.parseDouble(cost_string);
+        cost = bundle.getString("cost_string");
         seller = bundle.getString("seller");
         location = bundle.getString("location");
         setContentView(R.layout.activity_created_item);
+        displayItemName(name);
+        displayItemCost(cost);
+        displaySeller(seller);
+        displayItemLocation(location);
     }
 
-    public void displayItemName(ItemData test)
+    public void displayItemName(String itemNameInput)
     {
         final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
-        item_name.setText(name);
-        Log.i("jack", "here";
+        item_name.setText(itemNameInput);
     }
 
-    public void displayItemCost(ItemData test)
+    public void displayItemCost(String itemCostInput)
     {
-        double cost = test.getItemCost();
+        final TextView item_cost = (TextView) findViewById(R.id.ItemCost);
+        item_cost.setText("$" + itemCostInput);
     }
 
-    public void displaySeller(ItemData test)
+    public void displaySeller(String sellerInput)
     {
-        String seller = test.getSeller();
+        final TextView username = (TextView) findViewById(R.id.SellerName);
+        username.setText(sellerInput);
     }
-    public void displayItemLocation(ItemData test)
+    public void displayItemLocation(String locationInput)
     {
-        String location = test.getItemLocation();
+        final TextView item_location = (TextView) findViewById(R.id.SellerLocation);
+        item_location.setText(locationInput);
     }
 }
