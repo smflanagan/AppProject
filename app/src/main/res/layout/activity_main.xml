@@ -49,14 +49,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.28"
-                android:text="@string/my_items" />
+                android:text="@string/my_items"
+                tools:ignore="ButtonStyle" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.28"
-                android:text="@string/my_bundles" />
+                android:text="@string/my_bundles"
+                tools:ignore="ButtonStyle" />
         </LinearLayout>
 
     </LinearLayout>
