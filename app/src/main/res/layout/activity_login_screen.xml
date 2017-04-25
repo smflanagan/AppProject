@@ -16,11 +16,11 @@
             android:id="@+id/AppName"
             android:layout_width="112dp"
             android:layout_height="41dp"
+            android:layout_marginTop="103dp"
             android:text="@string/app_name"
-            android:textAppearance="@android:style/TextAppearance.Material.Title"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
             tools:layout_editor_absoluteX="243dp"
             tools:layout_editor_absoluteY="103dp"
-            android:layout_marginTop="104dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true" />
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             tools:layout_editor_absoluteX="242dp"
             tools:layout_editor_absoluteY="213dp"
-            android:layout_marginTop="73dp"
+            android:layout_marginTop="84dp"
             android:layout_below="@+id/AppName"
             android:layout_alignLeft="@+id/AppName"
             android:layout_alignStart="@+id/AppName" />
