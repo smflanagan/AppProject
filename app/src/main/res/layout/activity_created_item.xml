@@ -63,5 +63,6 @@
         android:layout_alignTop="@+id/ItemCost"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="96dp"
-        android:text="@string/add_to_cart" />
+        android:onClick="toAddBundle"
+        android:text="@string/add_to_bundle" />
 </RelativeLayout>

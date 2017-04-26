@@ -1,8 +1,10 @@
 package com.example.smflanagan.appproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -50,5 +52,11 @@ public class created_item extends AppCompatActivity {
     {
         final TextView item_location = (TextView) findViewById(R.id.SellerLocation);
         item_location.setText(locationInput);
+    }
+
+    public void toAddBundle(View view)
+    {
+        Intent intent = new Intent(this, add_bundle.class);
+        startActivity(intent);
     }
 }
