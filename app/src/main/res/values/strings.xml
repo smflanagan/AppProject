@@ -36,5 +36,6 @@
     <string name="signed_out">Signed Out</string>
     <string name="go_to_SignIn">SignIn</string>
     <string name="login_button">Login</string>
+    <string name="add_to_bundle">Add To Bundle</string>
 
 </resources>
