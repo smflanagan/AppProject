@@ -49,12 +49,12 @@
         android:id="@+id/ItemCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/SellerLocation"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/SellerLocation"
-        android:layout_marginBottom="255dp"
+        android:layout_marginBottom="152dp"
         android:text="@string/view_item_cost"
-        android:textAppearance="@android:style/TextAppearance.Medium" />
+        android:textAppearance="@android:style/TextAppearance.Medium"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/SellerLocation"
+        android:layout_alignStart="@+id/SellerLocation" />
 
     <Button
         android:id="@+id/AddToCart"
