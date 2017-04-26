@@ -35,5 +35,6 @@
     <string name="login_status">Signed Out</string>
     <string name="signed_out">Signed Out</string>
     <string name="go_to_SignIn">SignIn</string>
+    <string name="login_button">Login</string>
 
 </resources>

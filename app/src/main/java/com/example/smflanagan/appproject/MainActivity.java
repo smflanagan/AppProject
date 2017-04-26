@@ -25,4 +25,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, add_bundle.class);
         startActivity(intent);
     }
+
+    public void toLoginScreen(View view)
+    {
+        Intent intent = new Intent(this, login_screen.class);
+        startActivity(intent);
+    }
 }
