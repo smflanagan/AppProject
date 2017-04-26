@@ -38,12 +38,12 @@
         android:textAppearance="@android:style/TextAppearance.Medium" />
 
     <ImageView
-        android:id="@+id/imgView"
+        android:id="@+id/imgView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:contentDescription="@string/img_view"
         android:layout_above="@+id/ItemCost"
-        android:layout_below="@+id/SellerLocation" />
+        android:layout_below="@+id/SellerLocation"
+        android:contentDescription="@string/img_view" />
 
     <TextView
         android:id="@+id/ItemCost"
