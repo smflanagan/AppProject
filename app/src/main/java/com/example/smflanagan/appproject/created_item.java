@@ -59,5 +59,4 @@ public class created_item extends AppCompatActivity {
         Intent intent = new Intent(this, add_bundle.class);
         startActivity(intent);
     }
-
 }
