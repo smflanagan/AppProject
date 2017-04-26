@@ -31,5 +31,4 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, login_screen.class);
         startActivity(intent);
     }
-
 }
