@@ -23,6 +23,7 @@ import com.google.android.gms.common.api.Status;
 /**
  * Activity to demonstrate basic retrieval of the Google user's ID, email address, and basic
  * profile.
+ *
  */
 public class login_screen extends AppCompatActivity implements
         GoogleApiClient.OnConnectionFailedListener,
