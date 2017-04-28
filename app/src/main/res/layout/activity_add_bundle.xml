@@ -9,19 +9,35 @@
 
     <LinearLayout
         android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:orientation="horizontal"
+        android:layout_height="551dp"
+        android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp"
         tools:ignore="MissingConstraints">
 
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="toAddItem"
-            android:text="@string/add_item"
-            tools:ignore="InefficientWeight" />
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <Button
+                android:id="@+id/AddNewItem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="toAddItem"
+                android:text="@string/add_new_item"
+                tools:ignore="InefficientWeight" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/AddExisitingItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/add_existing_item" />
     </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
