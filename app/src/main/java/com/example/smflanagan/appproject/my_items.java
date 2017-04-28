@@ -11,3 +11,4 @@ public class my_items extends AppCompatActivity {
         setContentView(R.layout.activity_my_items);
     }
 }
+

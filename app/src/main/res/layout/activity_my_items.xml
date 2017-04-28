@@ -6,4 +6,5 @@
     android:layout_height="match_parent"
     tools:context="com.example.smflanagan.appproject.my_items">
 
+
 </android.support.constraint.ConstraintLayout>
