@@ -1,6 +1,5 @@
 package com.example.smflanagan.appproject;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -204,12 +203,12 @@ public class login_screen extends AppCompatActivity implements
             case R.id.sign_in_button:
                 signIn();
                 break;
-           /* case R.id.sign_out_button:
+           case R.id.sign_out_button:
                 signOut();
                 break;
-            case R.id.disconnect_button:
+            /*case R.id.disconnect_button:
                 revokeAccess();
-                break; */
+                break;*/
         }
     }
 }

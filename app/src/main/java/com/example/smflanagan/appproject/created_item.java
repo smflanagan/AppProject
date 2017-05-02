@@ -33,9 +33,11 @@ public class created_item extends AppCompatActivity {
         displayItemCost(cost);
         displaySeller(seller);
         displayItemLocation(location);
+
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference(name);
+
+        DatabaseReference myRef = database.getReference("message");
 
         myRef.setValue("Hello, World!");
         // Read from the database
