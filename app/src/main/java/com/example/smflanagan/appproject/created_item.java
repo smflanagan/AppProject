@@ -34,12 +34,17 @@ public class created_item extends AppCompatActivity {
         displaySeller(seller);
         displayItemLocation(location);
 
+        Log.i("jack","aqui");
+
         // Write a message to the database
         FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+        Log.i("jack","here");
 
         DatabaseReference myRef = database.getReference("message");
 
         myRef.setValue("Hello, World!");
+
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
