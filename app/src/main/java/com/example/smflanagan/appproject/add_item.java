@@ -141,7 +141,7 @@ public class add_item extends AppCompatActivity {
 
         ItemData test = new ItemData(name, cost, seller, location);
 
-        sendToFirebase();
+            sendToFirebase();
 
 
         toViewItem(view);
