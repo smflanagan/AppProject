@@ -31,4 +31,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, login_screen.class);
         startActivity(intent);
     }
+
+    public void toMyItems(View view)
+    {
+        Intent intent = new Intent(this, my_items.class);
+        startActivity(intent);
+    }
 }

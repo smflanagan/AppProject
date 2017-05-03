@@ -10,31 +10,27 @@ import java.util.List;
 
 public class my_items extends AppCompatActivity {
 
-    private ListView lv;
+    private ListView itemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
 
+        itemList = (ListView) findViewById(R.id.ItemList);
 
-        lv = (ListView) findViewById(R.id.ItemList);
-
-        // Instanciating an array list (you don't need to do this,
-        // you already have yours).
-        List<String> your_array_list = new ArrayList<String>();
-        your_array_list.add("jack");
-        your_array_list.add("sean");
+        // Instantiates the array list of items
+        ArrayList<ItemData> array = new ArrayList<ItemData>();
+        ItemData item = new ItemData("computer",200,"sean","douglas");
+        array.add(item);
+        //array.add("sean");
 
         // This is the array adapter, it takes the context of the activity as a
         // first parameter, the type of list view as a second parameter and your
         // array as a third parameter.
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this,
-                android.R.layout.simple_list_item_1,
-                your_array_list );
+        ArrayAdapter<ItemData> arrayAdapter = new ArrayAdapter<ItemData>(this, android.R.layout.simple_list_item_1, array);
 
-        lv.setAdapter(arrayAdapter);
+        itemList.setAdapter(arrayAdapter);
 
     }
 }
