@@ -13,11 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class add_item extends AppCompatActivity {
 
@@ -28,12 +23,13 @@ public class add_item extends AppCompatActivity {
     public double cost;
     public String seller;
     public String location;
-    private static final String TAG = "MainActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
     }
+
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
@@ -52,7 +48,7 @@ public class add_item extends AppCompatActivity {
                 // Get the Image from data
 
                 Uri selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
                 // Get the cursor
                 Cursor cursor = getContentResolver().query(selectedImage,
@@ -79,8 +75,7 @@ public class add_item extends AppCompatActivity {
 
     }
 
-    public void toViewItem(View view)
-    {
+    public void toViewItem(View view) {
         Intent intent = new Intent(this, created_item.class);
         intent.putExtra("name", name);
         intent.putExtra("cost_string", cost_string);
@@ -89,41 +84,7 @@ public class add_item extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void sendToFirebase(){
-
-        Log.i("jack","aqui");
-
-        // Write a message to the database
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-        Log.i("jack","here");
-
-        DatabaseReference myRef = database.getReference();
-
-        myRef.child("Hello, World!");
-        DatabaseReference newtest = myRef.push();
-        newtest.setValue("PLease work");
-
-        // Read from the database
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                Log.d(TAG, "Value is: " + value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-                Log.w(TAG, "Failed to read value.", error.toException());
-            }
-        });
-    }
-
-    public void createItem(View view)
-    {
+    public void createItem(View view) {
         EditText item_name = (EditText) findViewById(R.id.ItemNameView);
         name = item_name.getText().toString();
 
@@ -137,11 +98,9 @@ public class add_item extends AppCompatActivity {
         EditText seller_location = (EditText) findViewById(R.id.Location);
         location = seller_location.getText().toString();
 
-       // Image example = new Image();
+        // Image example = new Image();
 
         ItemData test = new ItemData(name, cost, seller, location);
-
-            sendToFirebase();
 
 
         toViewItem(view);

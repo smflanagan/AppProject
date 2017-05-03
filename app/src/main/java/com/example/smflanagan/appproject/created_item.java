@@ -2,18 +2,10 @@ package com.example.smflanagan.appproject;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 
 public class created_item extends AppCompatActivity {
-
 
 
     @Override
@@ -37,25 +29,22 @@ public class created_item extends AppCompatActivity {
 
     }
 
-    public void displayItemName(String itemNameInput)
-    {
+    public void displayItemName(String itemNameInput) {
         final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
         item_name.setText(itemNameInput);
     }
 
-    public void displayItemCost(String itemCostInput)
-    {
+    public void displayItemCost(String itemCostInput) {
         final TextView item_cost = (TextView) findViewById(R.id.ItemCost);
         item_cost.setText("$" + itemCostInput);
     }
 
-    public void displaySeller(String sellerInput)
-    {
+    public void displaySeller(String sellerInput) {
         final TextView username = (TextView) findViewById(R.id.SellerName);
         username.setText(sellerInput);
     }
-    public void displayItemLocation(String locationInput)
-    {
+
+    public void displayItemLocation(String locationInput) {
         final TextView item_location = (TextView) findViewById(R.id.SellerLocation);
         item_location.setText(locationInput);
     }
