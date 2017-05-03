@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Deal Steal</string>
+    <string name="app_name">DealSteal</string>
     <string name="add_item">Add Item</string>
     <string name="add_bundle">Add Bundle</string>
     <string name="username">Enter Username</string>
