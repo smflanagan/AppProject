@@ -15,10 +15,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.FirebaseOptions;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
 
 
 public class add_item extends AppCompatActivity {
@@ -38,7 +41,7 @@ public class add_item extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
        // Firebase.setAndroidContext(this);
-       // firebase = new Firebase("https://*firebase-url*.firebaseio.com/");
+       // firebase = new Firebase("https://appproject-af9a4.firebaseio.com/");
     }
 
     public void loadImagefromGallery(View view) {
