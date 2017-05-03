@@ -41,9 +41,11 @@ public class created_item extends AppCompatActivity {
 
         Log.i("jack","here");
 
-        DatabaseReference myRef = database.getReference("message");
+        DatabaseReference myRef = database.getReference();
 
-        myRef.setValue("Hello, World!");
+        myRef.child("Hello, World!");
+        DatabaseReference newtest = myRef.push();
+        newtest.setValue("PLease work");
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
