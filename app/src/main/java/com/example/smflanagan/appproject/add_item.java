@@ -2,16 +2,23 @@ package com.example.smflanagan.appproject;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.ValueEventListener;
+
+import java.io.ByteArrayOutputStream;
 
 public class add_item extends AppCompatActivity {
 
@@ -22,11 +29,14 @@ public class add_item extends AppCompatActivity {
     public double cost;
     public String seller;
     public String location;
+    //private Firebase firebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
+       // Firebase.setAndroidContext(this);
+       // firebase = new Firebase("https://appproject-af9a4.firebaseio.com/");
     }
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
@@ -105,6 +115,38 @@ public class add_item extends AppCompatActivity {
 
         toViewItem(view);
     }
+/*
+    private void storeImageToFirebase() {
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inSampleSize = 8; // shrink it down otherwise we will use stupid amounts of memory
+        Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoUri.getPath(), options);
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] bytes = baos.toByteArray();
+        String base64Image = Base64.encodeToString(bytes, Base64.DEFAULT);
+
+        // we finally have our base64 string version of the image, save it.
+        firebase.child("pic").setValue(base64Image);
+        System.out.println("Stored image with length: " + bytes.length);
+    }
+
+    private void previewStoredFirebaseImage() {
+        firebase.child("pic").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                String base64Image = (String) snapshot.getValue();
+                byte[] imageAsBytes = Base64.decode(base64Image.getBytes(), Base64.DEFAULT);
+                mThumbnailPreview.setImageBitmap(BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length));
+                System.out.println("Downloaded image with length: " + imageAsBytes.length);
+            }
+
+            @Override
+            public void onCancelled(FirebaseError error) {
+
+            }
+        });
+    }
+*/
 }
 
 

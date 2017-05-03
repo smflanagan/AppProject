@@ -219,7 +219,8 @@ public class login_screen extends AppCompatActivity implements
                 break;*/
         }
     }
-   /* public void requestUserInfo(){
+   /*
+   public void requestUserInfo(){
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
                 .setAudience(Collections.singletonList(CLIENT_ID))
                 // Or, if multiple clients access the backend:
