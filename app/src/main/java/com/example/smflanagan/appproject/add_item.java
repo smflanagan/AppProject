@@ -2,26 +2,15 @@ package com.example.smflanagan.appproject;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.ValueEventListener;
-
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 
 
 public class add_item extends AppCompatActivity {
@@ -106,7 +95,7 @@ public class add_item extends AppCompatActivity {
         cost_string = item_cost.getText().toString();
         cost = Double.parseDouble(cost_string);
 
-        EditText seller_name = (EditText) findViewById(R.id.Username);
+        EditText seller_name = (EditText) findViewById(R.id.EnterBundleName);
         seller = seller_name.getText().toString();
 
         EditText seller_location = (EditText) findViewById(R.id.Location);

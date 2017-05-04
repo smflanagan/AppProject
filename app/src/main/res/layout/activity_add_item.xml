@@ -4,7 +4,7 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/Username"
+        android:id="@+id/EnterBundleName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/Username"
+        android:layout_below="@+id/EnterBundleName"
         android:layout_marginTop="12dp"
         android:inputType="textPostalAddress"
         android:hint="@string/location" />
