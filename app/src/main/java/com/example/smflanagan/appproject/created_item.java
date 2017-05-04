@@ -1,12 +1,13 @@
 package com.example.smflanagan.appproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 
 public class created_item extends AppCompatActivity {
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,8 +26,6 @@ public class created_item extends AppCompatActivity {
         displayItemCost(cost);
         displaySeller(seller);
         displayItemLocation(location);
-
-
     }
 
     public void displayItemName(String itemNameInput) {

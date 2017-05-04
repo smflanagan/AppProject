@@ -98,6 +98,12 @@ public class add_item extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toMyItemsFromAdd(View view)
+    {
+        Intent intent = new Intent(this, my_items.class);
+        intent.putExtra("name", name);
+    }
+
     public void createItem(View view) {
         EditText item_name = (EditText) findViewById(R.id.ItemNameView);
         name = item_name.getText().toString();
@@ -116,7 +122,7 @@ public class add_item extends AppCompatActivity {
 
         ItemData test = new ItemData(name, cost, seller, location);
 
-
+        toMyItemsFromAdd(view);
         toViewItem(view);
     }
 /*
