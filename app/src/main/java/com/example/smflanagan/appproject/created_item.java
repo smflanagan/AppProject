@@ -1,17 +1,19 @@
 package com.example.smflanagan.appproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 
 public class created_item extends AppCompatActivity {
 
+    public String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String name;
         String cost;
         String seller;
         String location;
@@ -25,8 +27,6 @@ public class created_item extends AppCompatActivity {
         displayItemCost(cost);
         displaySeller(seller);
         displayItemLocation(location);
-
-
     }
 
     public void displayItemName(String itemNameInput) {
@@ -48,4 +48,12 @@ public class created_item extends AppCompatActivity {
         final TextView item_location = (TextView) findViewById(R.id.SellerLocation);
         item_location.setText(locationInput);
     }
+
+    public void toMyItemsFromCreated(View view)
+    {
+        Intent intent = new Intent(this, my_items.class);
+        intent.putExtra("name", name);
+        startActivity(intent);
+    }
+
 }
