@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class created_item extends AppCompatActivity {
 
-    private String name;
+    public String name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
