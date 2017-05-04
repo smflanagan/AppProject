@@ -24,12 +24,11 @@
             tools:layout_editor_absoluteY="8dp">
 
             <Button
-                android:id="@+id/AddNewItem"
+                android:id="@+id/SaveBundle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:onClick="toAddItem"
-                android:text="@string/add_new_item"
+                android:text="@string/save_bundle"
                 tools:ignore="InefficientWeight" />
         </LinearLayout>
 

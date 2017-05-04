@@ -39,5 +39,6 @@
     <string name="add_to_bundle">Add To Bundle</string>
     <string name="add_new_item">Add New Item</string>
     <string name="add_existing_item">Add Existing Item</string>
+    <string name="save_bundle">Save Bundle</string>
 
 </resources>

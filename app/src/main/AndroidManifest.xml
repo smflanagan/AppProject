@@ -34,7 +34,8 @@
             android:name="android.hardware.camera"
             android:required="true" />
 
-        <activity android:name=".my_items"></activity>
+        <activity android:name=".my_items" />
+        <activity android:name=".save_bundle"></activity>
     </application>
 
 </manifest>

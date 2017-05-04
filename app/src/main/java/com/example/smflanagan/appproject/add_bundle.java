@@ -18,4 +18,11 @@ public class add_bundle extends AppCompatActivity {
         Intent intent = new Intent(this, add_item.class);
         startActivity(intent);
     }
+
+    public void toSaveBundle(View view)
+    {
+        Intent intent = new Intent(this, save_bundle.class);
+        startActivity(intent);
+    }
+
 }
