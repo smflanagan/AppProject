@@ -75,7 +75,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="17dp"
-        android:onClick="toMyItems"
+        android:onClick="toMyItemsFromCreated"
         android:text="@string/my_items" />
 
 </RelativeLayout>
