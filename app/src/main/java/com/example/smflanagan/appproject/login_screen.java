@@ -18,14 +18,12 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
+
 //import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 //import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken.Payload;
 //import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 
 /**
  * Activity to demonstrate basic retrieval of the Google user's ID, email address, and basic
@@ -219,7 +217,7 @@ public class login_screen extends AppCompatActivity implements
                 break;*/
         }
     }
-   /*
+/*
    public void requestUserInfo(){
         GoogleIdTokenVerifier verifier = new GoogleIdTokenVerifier.Builder(transport, jsonFactory)
                 .setAudience(Collections.singletonList(CLIENT_ID))
@@ -253,5 +251,6 @@ public class login_screen extends AppCompatActivity implements
             System.out.println("Invalid ID token.");
         }
     }
-    */
+
+*/
 }
