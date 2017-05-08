@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "488637865439",
-    "firebase_url": "https://appproject-af9a4.firebaseio.com",
-    "project_id": "appproject-af9a4",
-    "storage_bucket": "appproject-af9a4.appspot.com"
+    "project_number": "939627764316",
+    "firebase_url": "https://dealsteal-b274a.firebaseio.com",
+    "project_id": "dealsteal-b274a",
+    "storage_bucket": "dealsteal-b274a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:488637865439:android:50a512d7a5ffdd5d",
+        "mobilesdk_app_id": "1:939627764316:android:50a512d7a5ffdd5d",
         "android_client_info": {
           "package_name": "com.example.smflanagan.appproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "488637865439-r6k7e67urifbce9ksqelg1b8ts8u8140.apps.googleusercontent.com",
+          "client_id": "939627764316-g47uc8v5g7t06im1r49e6svrs9pi1q3g.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.smflanagan.appproject",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "488637865439-kh5pc3u53e2fiaski002ml7342qhktjj.apps.googleusercontent.com",
+          "client_id": "939627764316-25hkp30oom9q2t2bt1bjklvlctb7qda2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA34wakxkDT0GxasuGHhJjPd5RpfFEhCzk"
+          "current_key": "AIzaSyB-wBuxponoJaqKpwHfKVYUa91h13H8pKM"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "488637865439-kh5pc3u53e2fiaski002ml7342qhktjj.apps.googleusercontent.com",
+              "client_id": "939627764316-25hkp30oom9q2t2bt1bjklvlctb7qda2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 
 public class add_item extends AppCompatActivity {
 
@@ -22,15 +25,21 @@ public class add_item extends AppCompatActivity {
     public double cost;
     public String seller;
     public String location;
-   // private Firebase firebase;
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-       // Firebase.setAndroidContext(this);
-       // firebase = new Firebase("https://appproject-af9a4.firebaseio.com/");
+       //Firebase.setAndroidContext(this);
+      // firebase = new Firebase("https://appproject-af9a4.firebaseio.com/");
+        database = FirebaseDatabase.getInstance();
+//Will add user id instead of items once auth is in place
+         myRef = database.getReference("Items");
+
+
     }
 
     public void loadImagefromGallery(View view) {
@@ -104,6 +113,8 @@ public class add_item extends AppCompatActivity {
         // Image example = new Image();
 
         ItemData test = new ItemData(name, cost, seller, location);
+
+    myRef.push().setValue(test);
 
         toViewItem(view);
     }
