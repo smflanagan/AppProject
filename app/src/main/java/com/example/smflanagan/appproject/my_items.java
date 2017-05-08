@@ -3,6 +3,7 @@ package com.example.smflanagan.appproject;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -28,15 +29,16 @@ public class my_items extends AppCompatActivity {
         if(bundle!=null)
         {
             itemName = bundle.getString("name");
-            itemCost = bundle.getString("cost_string");
-            itemSeller = bundle.getString("seller");
-            itemLocation = bundle.getString("location");
+            //itemCost = bundle.getString("cost_string");
+            //Log.i("jack",itemCost);
+            //itemSeller = bundle.getString("seller");
+            //itemLocation = bundle.getString("location");
 
             itemList = (ListView) findViewById(R.id.ItemList);
 
             // Instantiates the array list of items
             ArrayList<String> array = new ArrayList<String>();
-            array.add(itemName+" "+itemCost+" "+itemSeller+" "+itemLocation);
+            array.add(itemName);    //+" "+itemCost+" "+itemSeller+" "+itemLocation);
             //array.add("sean");
 
             // This is the array adapter, it takes the context of the activity as a
