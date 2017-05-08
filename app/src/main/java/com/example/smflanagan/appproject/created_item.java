@@ -56,4 +56,10 @@ public class created_item extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toAddBundleFromCreated(View view)
+    {
+        Intent intent = new Intent(this, add_bundle.class);
+        startActivity(intent);
+    }
+
 }

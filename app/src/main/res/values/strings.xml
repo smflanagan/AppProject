@@ -41,5 +41,6 @@
     <string name="add_existing_item">Add Existing Item</string>
     <string name="save_bundle">Save Bundle</string>
     <string name="enter_bundle_name">Enter Bundle Name</string>
+    <string name="save">Save</string>
 
 </resources>
