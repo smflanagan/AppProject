@@ -34,8 +34,8 @@ public class add_item extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-       //Firebase.setAndroidContext(this);
-      // firebase = new Firebase("https://appproject-af9a4.firebaseio.com/");
+        //FirebaseData.setAndroidContext(this);
+        //firebase = new Firebase("https://appproject-b274a.firebaseio.com/");
         database = FirebaseDatabase.getInstance();
         //Will add user id instead of items once auth is in place
          myRef = database.getReference("Items");
