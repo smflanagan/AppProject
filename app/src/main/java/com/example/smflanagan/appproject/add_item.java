@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -90,7 +91,9 @@ public class add_item extends AppCompatActivity {
     public void toViewItem(View view) {
         Intent intent = new Intent(this, created_item.class);
         intent.putExtra("name", name);
+        Log.i("jack",name);
         intent.putExtra("cost_string", cost_string);
+        Log.i("jack",cost_string);
         intent.putExtra("seller", seller);
         intent.putExtra("location", location);
         startActivity(intent);
