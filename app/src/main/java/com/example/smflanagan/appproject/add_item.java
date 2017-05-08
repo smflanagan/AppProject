@@ -36,7 +36,7 @@ public class add_item extends AppCompatActivity {
        //Firebase.setAndroidContext(this);
       // firebase = new Firebase("https://appproject-af9a4.firebaseio.com/");
         database = FirebaseDatabase.getInstance();
-//Will add user id instead of items once auth is in place
+        //Will add user id instead of items once auth is in place
          myRef = database.getReference("Items");
 
 
