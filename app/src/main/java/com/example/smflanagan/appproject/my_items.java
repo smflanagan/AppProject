@@ -68,21 +68,15 @@ public class my_items extends AppCompatActivity {
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot ds, String s) {
-                ItemData item;
-                for (DataSnapshot data : ds.getChildren()) {
-                   item = ds.getValue(ItemData.class);
-                    if (item == null) {
-                        continue;
-                    }
-                    MyItems.add(item);
 
-                }
+                updateItems(ds);
 
             }
 
             @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            public void onChildChanged(DataSnapshot ds, String s) {
 
+                updateItems(ds);
             }
 
             @Override
@@ -106,6 +100,21 @@ public class my_items extends AppCompatActivity {
     public void toAddItemFromMyItems(View view) {
         Intent intent = new Intent(this, add_item.class);
         startActivity(intent);
+    }
+
+    public void updateItems(DataSnapshot ds){
+        ItemData item;
+        for (DataSnapshot data : ds.getChildren()) {
+            item = ds.getValue(ItemData.class);
+            if (item == null) {
+                continue;
+            }
+            MyItems.add(item);
+            System.out.println("Name: " + item.getItemName());
+            System.out.println("Cost: " +item.getItemCost());
+            System.out.println("Seller: " +item.getSeller());
+            System.out.println("Location: " +item.getItemLocation());
+        }
     }
 }
 
