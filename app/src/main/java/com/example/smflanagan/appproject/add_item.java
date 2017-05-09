@@ -2,19 +2,31 @@ package com.example.smflanagan.appproject;
 
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
 
 
 public class add_item extends AppCompatActivity {
@@ -28,6 +40,9 @@ public class add_item extends AppCompatActivity {
     public String location;
     private FirebaseDatabase database;
     private DatabaseReference myRef;
+    private StorageReference storageRef;
+    private StorageReference imagesRef;
+    public ImageView imageView;
 
 
     @Override
@@ -39,8 +54,10 @@ public class add_item extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         //Will add user id instead of items once auth is in place
          myRef = database.getReference("Items");
-
-
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        storageRef = storage.getReference();
+        imagesRef = storageRef.child("imgViews");
+        
     }
 
     public void loadImagefromGallery(View view) {
@@ -119,38 +136,44 @@ public class add_item extends AppCompatActivity {
 
         toViewItem(view);
     }
-/*
-    private void storeImageToFirebase() {
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inSampleSize = 8; // shrink it down otherwise we will use stupid amounts of memory
-        Bitmap bitmap = BitmapFactory.decodeFile(mCurrentPhotoUri.getPath(), options);
+
+    private void uploadImageToFirebase() {
+        // Get the data from an ImageView as bytes
+        imageView.setDrawingCacheEnabled(true);
+        imageView.buildDrawingCache();
+        Bitmap bitmap = imageView.getDrawingCache();
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
-        byte[] bytes = baos.toByteArray();
-        String base64Image = Base64.encodeToString(bytes, Base64.DEFAULT);
+        byte[] data = baos.toByteArray();
 
-        // we finally have our base64 string version of the image, save it.
-        firebase.child("pic").setValue(base64Image);
-        System.out.println("Stored image with length: " + bytes.length);
-    }
-
-    private void previewStoredFirebaseImage() {
-        firebase.child("pic").addValueEventListener(new ValueEventListener() {
+        StorageReference imgViewRef = imagesRef.child(findViewById(R.id.imgView));
+        UploadTask uploadTask = imgViewRef.putBytes(data);
+        uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                String base64Image = (String) snapshot.getValue();
-                byte[] imageAsBytes = Base64.decode(base64Image.getBytes(), Base64.DEFAULT);
-                mThumbnailPreview.setImageBitmap(
-                        BitmapFactory.decodeByteArray(imageAsBytes, 0, imageAsBytes.length)
-                );
-                System.out.println("Downloaded image with length: " + imageAsBytes.length);
+            public void onFailure(@NonNull Exception exception) {
+                // Handle unsuccessful uploads
             }
-
+        }).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
-            public void onCancelled(FirebaseError error) {}
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+            }
         });
     }
-*/
+
+    private void downloadStoredFirebaseImage() {
+        // Reference to an image file in Firebase Storage
+        StorageReference storageReference = imagesRef.child(findViewById(R.id.imgView));
+
+        // ImageView in your Activity
+        imageView = findViewById(R.id.imgView2);
+
+        // Load the image using Glide
+        Glide.with(this /* context */)
+                .using(new FirebaseImageLoader())
+                .load(storageReference)
+                .into(imageView);
+    }
+
 }
 
 
