@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Base64;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -146,7 +144,7 @@ public class add_item extends AppCompatActivity {
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] data = baos.toByteArray();
 
-        StorageReference imgViewRef = imagesRef.child(findViewById(R.id.imgView));
+        StorageReference imgViewRef = imagesRef.child();
         UploadTask uploadTask = imgViewRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
@@ -162,16 +160,13 @@ public class add_item extends AppCompatActivity {
 
     private void downloadStoredFirebaseImage() {
         // Reference to an image file in Firebase Storage
-        StorageReference storageReference = imagesRef.child(findViewById(R.id.imgView));
+        StorageReference storageReference = imagesRef.child();
 
         // ImageView in your Activity
-        imageView = findViewById(R.id.imgView2);
+        imageView = (ImageView) findViewById(R.id.imgView2);
 
         // Load the image using Glide
-        Glide.with(this /* context */)
-                .using(new FirebaseImageLoader())
-                .load(storageReference)
-                .into(imageView);
+        Glide.with(this /* context */).using(new FirebaseImageLoader()).load(storageReference).into(imageView);
     }
 
 }
