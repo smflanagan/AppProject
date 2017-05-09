@@ -24,8 +24,11 @@ public class my_items extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference myRef;
     private String itemName;
+    private String itemCost;
+    private String itemSeller;
+    private String itemLocation;
+    private String allItemData;
     private ArrayList<ItemData> MyItems;
-
 
     private ArrayList<String> array;
 
@@ -34,23 +37,20 @@ public class my_items extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
 
-        //String itemCost;
-        //String itemSeller;
-        //String itemLocation;
         Bundle bundle = getIntent().getExtras();
-        if (bundle != null) {
+        if(bundle!=null)
+        {
             itemName = bundle.getString("name");
-            //itemCost = bundle.getString("cost_string");
-            //Log.i("jack",itemCost);
-            //itemSeller = bundle.getString("seller");
-            //itemLocation = bundle.getString("location");
+            itemCost = bundle.getString("cost");
+            itemSeller = bundle.getString("seller");
+            itemLocation = bundle.getString("location");
+            allItemData="Name: "+itemName+"\nCost: $"+itemCost+"\nSeller: "+itemSeller+"\nLocation: "+itemLocation;
 
             itemList = (ListView) findViewById(R.id.ItemList);
 
             // Instantiates the array list of items
             array = new ArrayList<String>();
-            array.add(itemName);    //+" "+itemCost+" "+itemSeller+" "+itemLocation);
-            //array.add("sean");
+            array.add(allItemData);
 
             // This is the array adapter, it takes the context of the activity as a
             // first parameter, the type of list view as a second parameter and your
@@ -58,8 +58,9 @@ public class my_items extends AppCompatActivity {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
             itemList.setAdapter(arrayAdapter);
-        } else
-            itemName = "";
+        }
+        else
+            allItemData="";
 
         database = FirebaseDatabase.getInstance();
         MyItems = new ArrayList<ItemData>();
