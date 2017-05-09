@@ -9,14 +9,14 @@ import android.widget.TextView;
 
 public class created_item extends AppCompatActivity {
 
-    public String name;
+    private String name;
+    private String cost;
+    private String seller;
+    private String location;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        String cost;
-        String seller;
-        String location;
         Bundle bundle = getIntent().getExtras();
         name = bundle.getString("name");
         cost = bundle.getString("cost_string");
@@ -52,7 +52,10 @@ public class created_item extends AppCompatActivity {
     public void toMyItemsFromCreated(View view)
     {
         Intent intent = new Intent(this, my_items.class);
-        intent.putExtra("name", name);
+        intent.putExtra("name",name);
+        intent.putExtra("cost",cost);
+        intent.putExtra("seller",seller);
+        intent.putExtra("location",location);
         startActivity(intent);
     }
 
