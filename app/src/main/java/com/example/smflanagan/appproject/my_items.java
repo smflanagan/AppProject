@@ -24,6 +24,7 @@ public class my_items extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference myRef;
     private String itemName;
+    private ArrayList<ItemData> MyItems;
 
 
     private ArrayList<String> array;
@@ -37,8 +38,7 @@ public class my_items extends AppCompatActivity {
         //String itemSeller;
         //String itemLocation;
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null)
-        {
+        if (bundle != null) {
             itemName = bundle.getString("name");
             //itemCost = bundle.getString("cost_string");
             //Log.i("jack",itemCost);
@@ -58,17 +58,26 @@ public class my_items extends AppCompatActivity {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
             itemList.setAdapter(arrayAdapter);
-        }
-        else
-            itemName="";
+        } else
+            itemName = "";
 
         database = FirebaseDatabase.getInstance();
+        MyItems = new ArrayList<ItemData>();
         //Will add user id instead of items once auth is in place
         myRef = database.getReference("Items");
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-              array.add(itemName);
+            public void onChildAdded(DataSnapshot ds, String s) {
+                ItemData item;
+                for (DataSnapshot data : ds.getChildren()) {
+                   item = ds.getValue(ItemData.class);
+                    if (item == null) {
+                        continue;
+                    }
+                    MyItems.add(item);
+
+                }
+
             }
 
             @Override
@@ -94,8 +103,7 @@ public class my_items extends AppCompatActivity {
 
     }
 
-    public void toAddItemFromMyItems(View view)
-    {
+    public void toAddItemFromMyItems(View view) {
         Intent intent = new Intent(this, add_item.class);
         startActivity(intent);
     }
