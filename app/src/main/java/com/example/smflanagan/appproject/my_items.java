@@ -58,6 +58,7 @@ public class my_items extends AppCompatActivity {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
             itemList.setAdapter(arrayAdapter);
+
         }
         else
             allItemData="";
