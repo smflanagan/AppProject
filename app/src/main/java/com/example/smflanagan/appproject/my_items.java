@@ -123,6 +123,7 @@ public class my_items extends AppCompatActivity {
         for (DataSnapshot data : ds.getChildren()) {
             item = ds.getValue(ItemData.class);
             if (item == null) {
+
                 continue;
             }
             MyItems.add(item);
