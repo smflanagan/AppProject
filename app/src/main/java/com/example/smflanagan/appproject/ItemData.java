@@ -83,7 +83,7 @@ public class ItemData {
         seller_name = seller;
     }
 
-    public void setLocation(String location) {
+    public void setItemLocation(String location) {
         location_data = location;
     }
 

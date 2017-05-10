@@ -14,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,14 +38,32 @@ public class my_items extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_items);
 
+
+        database = FirebaseDatabase.getInstance();
+        MyItems = new ArrayList<ItemData>();
+        //Will add user id instead of items once auth is in place
+        myRef = database.getReference("Items");
+
+        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                updateItems(dataSnapshot);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
         Bundle bundle = getIntent().getExtras();
-        if(bundle!=null)
-        {
+        if (bundle != null) {
             itemName = bundle.getString("name");
             itemCost = bundle.getString("cost");
             itemSeller = bundle.getString("seller");
             itemLocation = bundle.getString("location");
-            allItemData="Name: "+itemName+"\nCost: $"+itemCost+"\nSeller: "+itemSeller+"\nLocation: "+itemLocation;
+            allItemData = "Name: " + itemName + "\nCost: $" + itemCost + "\nSeller: " + itemSeller + "\nLocation: " + itemLocation;
 
             itemList = (ListView) findViewById(R.id.ItemList);
 
@@ -58,14 +77,10 @@ public class my_items extends AppCompatActivity {
             ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
             itemList.setAdapter(arrayAdapter);
-        }
-        else
-            allItemData="";
+        } else
+            allItemData = "";
 
-        database = FirebaseDatabase.getInstance();
-        MyItems = new ArrayList<ItemData>();
-        //Will add user id instead of items once auth is in place
-        myRef = database.getReference("Items");
+
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot ds, String s) {
@@ -103,7 +118,7 @@ public class my_items extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void updateItems(DataSnapshot ds){
+    public void updateItems(DataSnapshot ds) {
         ItemData item;
         for (DataSnapshot data : ds.getChildren()) {
             item = ds.getValue(ItemData.class);
@@ -112,9 +127,9 @@ public class my_items extends AppCompatActivity {
             }
             MyItems.add(item);
             System.out.println("Name: " + item.getItemName());
-            System.out.println("Cost: " +item.getItemCost());
-            System.out.println("Seller: " +item.getSeller());
-            System.out.println("Location: " +item.getItemLocation());
+            System.out.println("Cost: " + item.getItemCost());
+            System.out.println("Seller: " + item.getSeller());
+            System.out.println("Location: " + item.getItemLocation());
         }
     }
 }
