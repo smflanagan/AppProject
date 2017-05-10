@@ -134,7 +134,7 @@ public class add_item extends AppCompatActivity {
 
         toViewItem(view);
     }
-
+/*
     private void uploadImageToFirebase() {
         // Get the data from an ImageView as bytes
         imageView.setDrawingCacheEnabled(true);
@@ -143,9 +143,8 @@ public class add_item extends AppCompatActivity {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] data = baos.toByteArray();
-
-        StorageReference imgViewRef = imagesRef.child();
-        UploadTask uploadTask = imgViewRef.putBytes(data);
+        //StorageReference imgViewRef = imagesRef.child();
+       UploadTask uploadTask = imgViewRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
@@ -166,9 +165,9 @@ public class add_item extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imgView2);
 
         // Load the image using Glide
-        Glide.with(this /* context */).using(new FirebaseImageLoader()).load(storageReference).into(imageView);
+        Glide.with(this     COMMENT OUT ->  context       ).using(new FirebaseImageLoader()).load(storageReference).into(imageView);
     }
-
+*/
 }
 
 

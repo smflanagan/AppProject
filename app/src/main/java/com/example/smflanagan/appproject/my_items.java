@@ -25,7 +25,8 @@ public class my_items extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference myRef;
     private String itemName;
-    private String itemCost;
+    private double itemCost;
+    private String itemCostString;
     private String itemSeller;
     private String itemLocation;
     private String allItemData;
@@ -56,8 +57,7 @@ public class my_items extends AppCompatActivity {
             }
         });
 
-
-        Bundle bundle = getIntent().getExtras();
+        /*Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             itemName = bundle.getString("name");
             itemCost = bundle.getString("cost");
@@ -79,6 +79,7 @@ public class my_items extends AppCompatActivity {
             itemList.setAdapter(arrayAdapter);
         } else
             allItemData = "";
+            */
 
 
         myRef.addChildEventListener(new ChildEventListener() {
@@ -127,10 +128,31 @@ public class my_items extends AppCompatActivity {
                 continue;
             }
             MyItems.add(item);
-            System.out.println("Name: " + item.getItemName());
-            System.out.println("Cost: " + item.getItemCost());
-            System.out.println("Seller: " + item.getSeller());
-            System.out.println("Location: " + item.getItemLocation());
+
+            // Instantiates the array list of items
+            array = new ArrayList<String>();
+
+            for(int i=0; i < MyItems.size(); i++) {
+
+                itemName = MyItems.get(i).getItemName();
+                itemCost = MyItems.get(i).getItemCost();
+                itemCostString = Double.toString(itemCost);
+                itemSeller = MyItems.get(i).getSeller();
+                itemLocation = MyItems.get(i).getItemLocation();
+                allItemData= "Name: " + itemName + "\nCost: $" + itemCost + "\nSeller: " + itemSeller + "\nLocation: " + itemLocation;
+
+                array.add(allItemData);
+            }
+
+            itemList = (ListView) findViewById(R.id.ItemList);
+
+            // This is the array adapter, it takes the context of the activity as a
+            // first parameter, the type of list view as a second parameter and your
+            // array as a third parameter.
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
+
+            itemList.setAdapter(arrayAdapter);
+
         }
     }
 }
