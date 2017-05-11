@@ -14,8 +14,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -23,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 
@@ -41,6 +41,7 @@ public class add_item extends AppCompatActivity {
     private StorageReference storageRef;
     private StorageReference imagesRef;
     public ImageView imageView;
+    public String string_download_url;
 
 
     @Override
@@ -55,6 +56,7 @@ public class add_item extends AppCompatActivity {
         FirebaseStorage storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
         imagesRef = storageRef.child("imgViews");
+
         
     }
 
@@ -134,7 +136,7 @@ public class add_item extends AppCompatActivity {
 
         toViewItem(view);
     }
-/*
+
     private void uploadImageToFirebase() {
         // Get the data from an ImageView as bytes
         imageView.setDrawingCacheEnabled(true);
@@ -143,8 +145,9 @@ public class add_item extends AppCompatActivity {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         bitmap.compress(Bitmap.CompressFormat.JPEG, 100, baos);
         byte[] data = baos.toByteArray();
-        //StorageReference imgViewRef = imagesRef.child();
-       UploadTask uploadTask = imgViewRef.putBytes(data);
+
+        StorageReference imgViewRef = storageRef.child("imgViews");
+        UploadTask uploadTask = imgViewRef.putBytes(data);
         uploadTask.addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception exception) {
@@ -158,16 +161,12 @@ public class add_item extends AppCompatActivity {
     }
 
     private void downloadStoredFirebaseImage() {
-        // Reference to an image file in Firebase Storage
-        StorageReference storageReference = imagesRef.child();
-
-        // ImageView in your Activity
-        imageView = (ImageView) findViewById(R.id.imgView2);
-
-        // Load the image using Glide
-        Glide.with(this     COMMENT OUT ->  context       ).using(new FirebaseImageLoader()).load(storageReference).into(imageView);
+        Uri url = storageRef.child("imgViews").getDownloadUrl().getResult();
+        string_download_url = url.toString();
+        ImageView image = (ImageView) findViewById(R.id.imgView2);
+        Picasso.with(this).load(string_download_url).into(image);
     }
-*/
+
 }
 
 
