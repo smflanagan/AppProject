@@ -39,7 +39,6 @@ public class add_item extends AppCompatActivity {
     private FirebaseDatabase database;
     private DatabaseReference myRef;
     private StorageReference storageRef;
-    private StorageReference imagesRef;
     public ImageView imageView;
     public String string_download_url;
 
@@ -48,14 +47,11 @@ public class add_item extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
-        //FirebaseData.setAndroidContext(this);
-        //firebase = new Firebase("https://appproject-b274a.firebaseio.com/");
         database = FirebaseDatabase.getInstance();
         //Will add user id instead of items once auth is in place
          myRef = database.getReference("Items");
         FirebaseStorage storage = FirebaseStorage.getInstance();
         storageRef = storage.getReference();
-        imagesRef = storageRef.child("imgViews");
 
         
     }
@@ -91,8 +87,8 @@ public class add_item extends AppCompatActivity {
                 cursor.close();
                 ImageView imgView = (ImageView) findViewById(R.id.imgView);
                 // Set the Image in ImageView after decoding the String
-                imgView.setImageBitmap(BitmapFactory
-                        .decodeFile(imgDecodableString));
+                imgView.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
+                //uploadImageToFirebase();
 
             } else {
                 Toast.makeText(this, "You haven't picked Image",
@@ -102,6 +98,7 @@ public class add_item extends AppCompatActivity {
             Toast.makeText(this, "Something went wrong", Toast.LENGTH_LONG)
                     .show();
         }
+
 
     }
 
@@ -128,11 +125,11 @@ public class add_item extends AppCompatActivity {
         EditText seller_location = (EditText) findViewById(R.id.Location);
         location = seller_location.getText().toString();
 
-        // Image example = new Image();
+        //downloadStoredFirebaseImage();
 
         ItemData test = new ItemData(name, cost, seller, location);
 
-    myRef.push().setValue(test);
+        myRef.push().setValue(test);
 
         toViewItem(view);
     }

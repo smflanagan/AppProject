@@ -10,14 +10,14 @@
 
         <TextView
             android:id="@+id/AppName"
-            android:layout_width="112dp"
-            android:layout_height="41dp"
+            android:layout_width="92dp"
+            android:layout_height="45dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            tools:layout_editor_absoluteX="244dp"
-            tools:layout_editor_absoluteY="66dp" />
+            tools:layout_editor_absoluteX="254dp"
+            tools:layout_editor_absoluteY="62dp" />
 
     <Button
             android:id="@+id/sign_out_button"
