@@ -88,7 +88,7 @@ public class add_item extends AppCompatActivity {
                 ImageView imgView = (ImageView) findViewById(R.id.imgView);
                 // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
-                uploadImageToFirebase();
+                //uploadImageToFirebase();
 
             } else {
                 Toast.makeText(this, "You haven't picked Image",
