@@ -49,6 +49,7 @@ public class login_screen extends BaseActivity implements
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
+    public String USER;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -112,6 +113,8 @@ public class login_screen extends BaseActivity implements
                 // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = result.getSignInAccount();
                 firebaseAuthWithGoogle(account);
+
+
             } else {
                 // Google Sign In failed, update UI appropriately
                 // [START_EXCLUDE]
@@ -228,4 +231,7 @@ public class login_screen extends BaseActivity implements
             revokeAccess();
         }
     }
+
+
+
 }
