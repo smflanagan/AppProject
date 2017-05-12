@@ -90,7 +90,7 @@ public class add_item extends AppCompatActivity {
                 ImageView imgView = (ImageView) findViewById(R.id.imgView);
                 // Set the Image in ImageView after decoding the String
                 imgView.setImageBitmap(BitmapFactory.decodeFile(imgDecodableString));
-                uploadImageToFirebase();
+                //uploadImageToFirebase();
 
             } else {
                 Toast.makeText(this, "You haven't picked Image",
@@ -127,7 +127,7 @@ public class add_item extends AppCompatActivity {
         EditText seller_location = (EditText) findViewById(R.id.Location);
         location = seller_location.getText().toString();
 
-        downloadStoredFirebaseImage();
+        //downloadStoredFirebaseImage();
 
         ItemData test = new ItemData(name, cost, seller, location);
 
