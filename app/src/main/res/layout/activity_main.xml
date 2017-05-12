@@ -30,7 +30,7 @@
                 android:drawableLeft="@drawable/green_plus"
                 android:onClick="toAddItem"
                 android:text="@string/add_item"
-                tools:ignore="ButtonStyle" />
+                tools:ignore="ButtonStyle,RtlHardcoded" />
 
             <Button
                 android:id="@+id/AddBundle"
@@ -40,7 +40,7 @@
                 android:drawableLeft="@drawable/green_plus"
                 android:onClick="toAddBundle"
                 android:text="@string/add_bundle"
-                tools:ignore="ButtonStyle" />
+                tools:ignore="ButtonStyle,RtlHardcoded" />
         </LinearLayout>
 
         <LinearLayout
