@@ -125,7 +125,7 @@ public class add_item extends AppCompatActivity {
         EditText seller_location = (EditText) findViewById(R.id.Location);
         location = seller_location.getText().toString();
 
-        downloadStoredFirebaseImage();
+        //downloadStoredFirebaseImage();
 
         ItemData test = new ItemData(name, cost, seller, location);
 

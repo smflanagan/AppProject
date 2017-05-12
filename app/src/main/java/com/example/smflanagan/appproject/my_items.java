@@ -81,7 +81,6 @@ public class my_items extends AppCompatActivity {
             allItemData = "";
             */
 
-
         myRef.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot ds, String s) {
@@ -132,7 +131,7 @@ public class my_items extends AppCompatActivity {
             // Instantiates the array list of items
             array = new ArrayList<String>();
 
-            for(int i=0; i < MyItems.size(); i++) {
+            for(int i=0; i < MyItems.size(); i=i+4) {
 
                 itemName = MyItems.get(i).getItemName();
                 itemCost = MyItems.get(i).getItemCost();
@@ -141,7 +140,8 @@ public class my_items extends AppCompatActivity {
                 itemLocation = MyItems.get(i).getItemLocation();
                 allItemData= "Name: " + itemName + "\nCost: $" + itemCost + "\nSeller: " + itemSeller + "\nLocation: " + itemLocation;
 
-                array.add(allItemData);
+                if(itemCost!=0)
+                    array.add(allItemData);
             }
 
             itemList = (ListView) findViewById(R.id.ItemList);
