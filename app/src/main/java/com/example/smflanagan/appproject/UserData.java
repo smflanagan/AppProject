@@ -10,10 +10,10 @@ public class UserData {
     private String user_name;
     private String user_location;
 
-    public UserData(String username, String location) {
+    public UserData(String username) {
 
         user_name = username;
-        user_location = location;
+       // user_location = location;
 
     }
 

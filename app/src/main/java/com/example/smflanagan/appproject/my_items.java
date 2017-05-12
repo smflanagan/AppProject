@@ -1,14 +1,15 @@
 package com.example.smflanagan.appproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,7 +18,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class my_items extends AppCompatActivity {
 
@@ -31,6 +31,9 @@ public class my_items extends AppCompatActivity {
     private String itemLocation;
     private String allItemData;
     private ArrayList<ItemData> MyItems;
+    private String uid;
+
+
 
     private ArrayList<String> array;
 
@@ -43,7 +46,24 @@ public class my_items extends AppCompatActivity {
         database = FirebaseDatabase.getInstance();
         MyItems = new ArrayList<ItemData>();
         //Will add user id instead of items once auth is in place
-        myRef = database.getReference("Items");
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+            String name = user.getDisplayName();
+            String email = user.getEmail();
+            Uri photoUrl = user.getPhotoUrl();
+
+            // Check if user's email is verified
+            boolean emailVerified = user.isEmailVerified();
+
+            // The user's ID, unique to the Firebase project. Do NOT use this value to
+            // authenticate with your backend server, if you have one. Use
+            // FirebaseUser.getToken() instead.
+            uid = user.getUid();
+        }
+
+        myRef = database.getReference(uid);
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -132,14 +152,14 @@ public class my_items extends AppCompatActivity {
             // Instantiates the array list of items
             array = new ArrayList<String>();
 
-            for(int i=0; i < MyItems.size(); i++) {
+            for (int i = 0; i < MyItems.size(); i++) {
 
                 itemName = MyItems.get(i).getItemName();
                 itemCost = MyItems.get(i).getItemCost();
                 itemCostString = Double.toString(itemCost);
                 itemSeller = MyItems.get(i).getSeller();
                 itemLocation = MyItems.get(i).getItemLocation();
-                allItemData= "Name: " + itemName + "\nCost: $" + itemCost + "\nSeller: " + itemSeller + "\nLocation: " + itemLocation;
+                allItemData = "Name: " + itemName + "\nCost: $" + itemCost + "\nSeller: " + itemSeller + "\nLocation: " + itemLocation;
 
                 array.add(allItemData);
             }
