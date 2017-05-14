@@ -212,7 +212,7 @@ public class add_item extends AppCompatActivity {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Toast.makeText(add_item.this, "TASK SUCCEEDED", Toast.LENGTH_SHORT).show();
-                        Uri downloadUrl = taskSnapshot.getDownloadUrl();
+                        @SuppressWarnings("VisibleForTests") Uri downloadUrl = taskSnapshot.getDownloadUrl();
                         String DOWNLOAD_URL = downloadUrl.getPath();
                         Log.v("DOWNLOAD URL", DOWNLOAD_URL);
                         Toast.makeText(add_item.this, DOWNLOAD_URL, Toast.LENGTH_SHORT).show();
