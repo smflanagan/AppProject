@@ -24,10 +24,21 @@
             android:background="#4169E1"
             android:textColor="#FFFAFA" />
 
+        <EditText android:id="@+id/Search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:hint="Search Items"
+            android:inputType="textVisiblePassword"
+            tools:ignore="HardcodedText" />
+
         <ListView
             android:id="@+id/ItemList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:divider="@drawable/black_line"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="8dp"
