@@ -24,6 +24,7 @@
         android:layout_weight="1"
         android:onClick="saveBundleName"
         android:text="@string/save"
+        android:theme="@style/ThemeOverlay.MyDarkButton"
         tools:ignore="InefficientWeight,ObsoleteLayoutParam" />
 
 </RelativeLayout>

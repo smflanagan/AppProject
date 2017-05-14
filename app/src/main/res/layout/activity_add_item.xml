@@ -64,7 +64,10 @@
         android:layout_marginBottom="18dp"
         android:layout_above="@+id/CreateItem"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_margin="5dp"
+        android:background="#4169E1"
+        android:textColor="#FFFAFA" />
 
     <Button
         android:id="@+id/CreateItem"
@@ -75,7 +78,10 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="18dp"
         android:onClick="createItem"
-        android:text="@string/create_item" />
+        android:text="@string/create_item"
+        android:layout_margin="5dp"
+        android:background="#4169E1"
+        android:textColor="#FFFAFA" />
 
 
 </RelativeLayout>
