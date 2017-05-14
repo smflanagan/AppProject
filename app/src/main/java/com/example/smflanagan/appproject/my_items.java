@@ -19,23 +19,30 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+// my_items class: Java class collects all of a user's items and displays them in a list view
+// From this class, users are able to identify all of their items and add any item to a specific bundle
 public class my_items extends AppCompatActivity {
 
-    private ListView itemList;
+    // Class variables required for Firebase implementation
     private FirebaseDatabase database;
     private DatabaseReference myRef;
+
+    // Class variables allow for item data to be transferred into a ListView containing strings that display item contents
     private String itemName;
     private double itemCost;
     private String itemCostString;
     private String itemSeller;
     private String itemLocation;
     private String allItemData;
-    private ArrayList<ItemData> MyItems;
+    private ListView itemList;
     private String uid;
-
-
+    private ArrayList<ItemData> MyItems;
     private ArrayList<String> array;
 
+    // Method sets layout and references Firebase to create ListView
+    // Commented out section displays alternate method to obtaining values for the array shown in ListView using putExtra methods
+    // The issue with this is that the class can only be loaded after creating a new item
+    // Using Firebase allows the data to be accessed everywhere without restrictions
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +73,8 @@ public class my_items extends AppCompatActivity {
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
                 updateItems(dataSnapshot);
             }
 
@@ -101,6 +109,7 @@ public class my_items extends AppCompatActivity {
             */
 
         myRef.addChildEventListener(new ChildEventListener() {
+            // When an item is added, ListView updates to incorporate new item
             @Override
             public void onChildAdded(DataSnapshot ds, String s) {
 
@@ -108,6 +117,7 @@ public class my_items extends AppCompatActivity {
 
             }
 
+            // When an item is changed, ListView updates to incorporate change in item
             @Override
             public void onChildChanged(DataSnapshot ds, String s) {
 
@@ -132,11 +142,13 @@ public class my_items extends AppCompatActivity {
 
     }
 
+    // Method brings user to add_item class when "Add New Item" button is pressed
     public void toAddItemFromMyItems(View view) {
         Intent intent = new Intent(this, add_item.class);
         startActivity(intent);
     }
 
+    // Updates ListView of items
     public void updateItems(DataSnapshot ds) {
         ItemData item;
         for (DataSnapshot data : ds.getChildren()) {
@@ -150,6 +162,7 @@ public class my_items extends AppCompatActivity {
             // Instantiates the array list of items
             array = new ArrayList<String>();
 
+            // Iteration loop creates item data for each item in ListView display
             for (int i = 0; i < MyItems.size(); i = i + 4) {
 
                 itemName = MyItems.get(i).getItemName();

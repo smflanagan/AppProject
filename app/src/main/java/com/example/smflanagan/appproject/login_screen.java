@@ -43,7 +43,6 @@ import com.google.firebase.auth.GoogleAuthProvider;
 // login_screen class: Java class that enables users to log into a google account using the Google sign-in API
 // Firebase is then authenticized with a user's unique Google ID Token
 // This allows every user to possess their own unique set of items and bundles they are able to post
-
 public class login_screen extends BaseActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {

@@ -7,7 +7,6 @@ import android.widget.Button;
 
 // MainActivity class: Java class for the main screen that the user sees when the app initially builds
 // Display of main activity is unaffected by any action user performs in app
-
 public class MainActivity extends AppCompatActivity {
 
     // Method creates layout when screen is built

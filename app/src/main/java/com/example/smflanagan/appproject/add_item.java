@@ -27,16 +27,22 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
 
-
+// add_item class: Java class adds a new item to a specific user's list of items
+// User inputs data for name, cost, and location of item
 public class add_item extends AppCompatActivity {
 
+    // Class variables for image component of item
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
+
+    // Class variables for each of 4 text components of an item and variable for cost as a numerical value
     public String name;
     public String cost_string;
     public double cost;
     public String seller;
     public String location;
+
+    // Class variables necessary to interact with Firebase in class
     private FirebaseDatabase database;
     private DatabaseReference myRef;
     private StorageReference storageRef;
@@ -45,7 +51,7 @@ public class add_item extends AppCompatActivity {
     private static final int SELECT_PICTURE = 100;
     public String DOWNLOAD_URL;
 
-
+    // Method sets layout for screen and accesses Firebase
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +66,7 @@ public class add_item extends AppCompatActivity {
         onUploadButtonClick(); // for uploading the image to Firebase Storage.
     }
 
+    // Method enables user to load an image from a separate photo app
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
@@ -118,6 +125,8 @@ public class add_item extends AppCompatActivity {
 
     }
 
+    // Method brings the user to created_item class when "Create Item" button is pushed (through method createItem)
+    // putExtra methods take the user input and carry it to the created_item class where it is then displayed
     public void toViewItem(View view) {
         Intent intent = new Intent(this, created_item.class);
         intent.putExtra("name", name);
@@ -127,6 +136,9 @@ public class add_item extends AppCompatActivity {
         startActivity(intent);
     }
 
+    // Method assigns each variable to user input for each category
+    // An item is created using the inputted data
+    // Method then brings the user to created_item class when "Create Item" button is pushed by calling method toViewItem
     public void createItem(View view) {
         EditText item_name = (EditText) findViewById(R.id.ItemNameView);
         name = item_name.getText().toString();
@@ -149,7 +161,6 @@ public class add_item extends AppCompatActivity {
 
         toViewItem(view);
     }
-
 
     protected  void onImageViewClick(){
         imageView.setOnClickListener(new View.OnClickListener() {

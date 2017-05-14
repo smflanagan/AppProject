@@ -1,15 +1,11 @@
 package com.example.smflanagan.appproject;
 
-
 import android.media.Image;
 
 import java.util.ArrayList;
 
-/**
- * Created by smflanagan on 3/29/2017.
- * Added support for adding and removing items from a bundle
- */
-
+// BundleData class: Java class that serves a user-defined data type
+// Bundles are essentially arrays of items, another user-defined data type
 public class BundleData {
 
     private String bundle_name;
