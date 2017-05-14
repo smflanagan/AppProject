@@ -35,6 +35,10 @@
             android:text="@string/add_existing_item"
             android:textColor="#FFFAFA" />
 
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

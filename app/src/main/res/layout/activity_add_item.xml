@@ -15,7 +15,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/Location"
+        android:id="@+id/EnterLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -26,23 +26,23 @@
         android:hint="@string/location" />
 
     <EditText
-        android:id="@+id/ItemNameView"
+        android:id="@+id/EnterItemName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="text"
         android:hint="@string/item_name"
-        android:layout_below="@+id/Location"
+        android:layout_below="@+id/EnterLocation"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginTop="11dp" />
 
     <EditText
-        android:id="@+id/ItemCost"
+        android:id="@+id/EnterItemCost"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/item_cost"
         android:layout_marginTop="14dp"
-        android:layout_below="@+id/ItemNameView"
+        android:layout_below="@+id/EnterItemName"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:inputType="numberDecimal" />
@@ -52,7 +52,7 @@
         android:layout_width="fill_parent"
         android:layout_height="match_parent"
         android:contentDescription="@string/img_view"
-        android:layout_below="@+id/ItemCost"
+        android:layout_below="@+id/EnterItemCost"
         android:layout_above="@+id/LoadPicture" />
 
     <Button

@@ -16,7 +16,7 @@
         android:textAppearance="@android:style/TextAppearance.Medium" />
 
     <TextView
-        android:id="@+id/ItemNameView"
+        android:id="@+id/EnterItemName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="31dp"
@@ -30,9 +30,9 @@
         android:id="@+id/SellerLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/ItemNameView"
-        android:layout_alignStart="@+id/ItemNameView"
-        android:layout_below="@+id/ItemNameView"
+        android:layout_alignLeft="@+id/EnterItemName"
+        android:layout_alignStart="@+id/EnterItemName"
+        android:layout_below="@+id/EnterItemName"
         android:layout_marginTop="37dp"
         android:text="@string/seller_location"
         android:textAppearance="@android:style/TextAppearance.Medium" />
@@ -41,12 +41,12 @@
         android:id="@+id/imgView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ItemCost"
+        android:layout_above="@+id/EnterItemCost"
         android:layout_below="@+id/SellerLocation"
         android:contentDescription="@string/img_view" />
 
     <TextView
-        android:id="@+id/ItemCost"
+        android:id="@+id/EnterItemCost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="152dp"

@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 // save_bundle class: Java class that allows user to save a new or edited bundle
 public class save_bundle extends AppCompatActivity {
+
+    private String bundleName;
 
     // Sets layout when save_bundle screen is loaded
     @Override
@@ -16,10 +19,13 @@ public class save_bundle extends AppCompatActivity {
     }
 
     // Method that saves user inputted data as bundle name when button "Save" is pressed
-    // Method also brings user back to add_bundle class
+    // Method also brings user to my_bundle class
     public void saveBundleName(View view)
     {
+        EditText bundle_name = (EditText) findViewById(R.id.EnterBundleName);
+        bundleName = bundle_name.getText().toString();
         Intent intent = new Intent(this, add_bundle.class);
+        //intent.putExtra("bundleName",bundleName);
         startActivity(intent);
     }
 

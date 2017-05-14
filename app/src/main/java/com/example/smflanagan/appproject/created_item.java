@@ -34,13 +34,13 @@ public class created_item extends AppCompatActivity {
 
     // Method displays the item name
     public void displayItemName(String itemNameInput) {
-        final TextView item_name = (TextView) findViewById(R.id.ItemNameView);
+        final TextView item_name = (TextView) findViewById(R.id.EnterItemName);
         item_name.setText(itemNameInput);
     }
 
     // Method displays the item cost
     public void displayItemCost(String itemCostInput) {
-        final TextView item_cost = (TextView) findViewById(R.id.ItemCost);
+        final TextView item_cost = (TextView) findViewById(R.id.EnterItemCost);
         item_cost.setText("$" + itemCostInput);
     }
 

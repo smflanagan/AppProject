@@ -7,7 +7,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -25,11 +24,11 @@ public class add_item extends AppCompatActivity {
     String imgDecodableString;
 
     // Class variables for each of 4 text components of an item and variable for cost as a numerical value
-    public String name;
-    public String cost_string;
-    public double cost;
-    public String seller;
-    public String location;
+    private String name;
+    private String cost_string;
+    private double cost;
+    private String seller;
+    private String location;
 
     // Class variables necessary to interact with Firebase in class
     private FirebaseDatabase database;
@@ -104,17 +103,17 @@ public class add_item extends AppCompatActivity {
     // An item is created using the inputted data
     // Method then brings the user to created_item class when "Create Item" button is pushed by calling method toViewItem
     public void createItem(View view) {
-        EditText item_name = (EditText) findViewById(R.id.ItemNameView);
+        EditText item_name = (EditText) findViewById(R.id.EnterItemName);
         name = item_name.getText().toString();
 
-        EditText item_cost = (EditText) findViewById(R.id.ItemCost);
+        EditText item_cost = (EditText) findViewById(R.id.EnterItemCost);
         cost_string = item_cost.getText().toString();
         cost = Double.parseDouble(cost_string);
 
         EditText seller_name = (EditText) findViewById(R.id.EnterBundleName);
         seller = seller_name.getText().toString();
 
-        EditText seller_location = (EditText) findViewById(R.id.Location);
+        EditText seller_location = (EditText) findViewById(R.id.EnterLocation);
         location = seller_location.getText().toString();
 
         ItemData test = new ItemData(name, cost, seller, location);
