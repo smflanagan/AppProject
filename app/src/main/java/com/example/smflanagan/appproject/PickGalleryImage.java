@@ -21,7 +21,7 @@ public class PickGalleryImage extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i("Melissa", "Hi in the onCreate method");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_item);
+        setContentView(R.layout.activity_add_item);
     }
 
     public void loadImagefromGallery(View view) {
