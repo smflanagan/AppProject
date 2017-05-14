@@ -54,7 +54,7 @@ public class my_items extends AppCompatActivity {
             Uri photoUrl = user.getPhotoUrl();
 
             // Check if user's email is verified
-            boolean emailVerified = user.isEmailVerified();
+            //boolean emailVerified = user.isEmailVerified();
 
             // The user's ID, unique to the Firebase project. Do NOT use this value to
             // authenticate with your backend server, if you have one. Use
@@ -62,7 +62,7 @@ public class my_items extends AppCompatActivity {
             uid = user.getUid();
         }
 
-        myRef = database.getReference(uid);
+        myRef = database.getReference("Items");
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
