@@ -96,9 +96,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:background="#4169E1"
                 android:onClick="toLoginScreen"
                 android:text="@string/login"
+                android:background="#4169E1"
                 android:textColor="#FFFAFA"
                 tools:ignore="InefficientWeight" />
 
