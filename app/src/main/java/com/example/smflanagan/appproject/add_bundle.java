@@ -1,11 +1,11 @@
 package com.example.smflanagan.appproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+
+
 
 // add_bundle class: Java class that enables user to add and save a bundle
 // Also used to edit and save previously created bundles

@@ -49,7 +49,6 @@ public class login_screen extends BaseActivity implements
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
-    public String USER;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -232,7 +231,6 @@ public class login_screen extends BaseActivity implements
             revokeAccess();
         }
     }
-
 
 
 }
