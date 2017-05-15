@@ -42,7 +42,6 @@ public class my_items extends AppCompatActivity {
     private String uid;
     private ArrayList<ItemData> MyItems;
     private ArrayList<String> array;
-    private String user_name;
     ArrayAdapter<String> arrayAdapter;
 
     EditText search;
@@ -64,12 +63,12 @@ public class my_items extends AppCompatActivity {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             // User is signed in
-        user_name = user.getEmail();
+
         } else {
             // No user is signed in
         }
 
-        myRef = database.getReference(user_name);
+        myRef = database.getReference("Items");
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
