@@ -59,20 +59,36 @@ public class BundleData {
 
     }
 
+    /**
+     * Method adds a new item to the bundle
+     * @param item
+     */
     public void addItem(ItemData item) {
 
         item_list.add(item);
     }
 
+    /**
+     * Method removes an item from the bundle
+     * @param item
+     */
     public void removeItem(ItemData item) {
 
         item_list.remove(item);
     }
 
+    /**
+     * Method returns only the name of the bundle
+     * @return
+     */
     public String getBundleName() {
         return bundle_name;
     }
 
+    /**
+     * Method returns only the cost of the bundle
+     * @return
+     */
     public double getBundleCost() {
 
         double bundle_cost = 0.0;
@@ -84,31 +100,58 @@ public class BundleData {
         return bundle_cost;
     }
 
+    /**
+     * Method returns only the seller of the bundle
+     * @return
+     */
     public String getSeller() {
         return seller_name;
     }
 
-
+    /**
+     * Method returns only the location of the bundle
+     * @return
+     */
     public String getBundleLocation() {
         return location_data;
     }
 
+    /**
+     * Method returns only the image of the bundle
+     * @return
+     */
     public Image getBundleImage() {
         return bundle_image;
     }
 
+    /**
+     * Method sets the name of the bundle to the inputted parameter
+     * @return
+     */
     public void setBundleName(String name) {
         bundle_name = name;
     }
 
+    /**
+     * Method sets the seller of the bundle to the inputted parameter
+     * @param seller
+     */
     public void setSeller(String seller) {
         seller_name = seller;
     }
 
+    /**
+     * Method sets the location of the bundle to the inputted parameter
+     * @param location
+     */
     public void setLocation(String location) {
         location_data = location;
     }
 
+    /**
+     * Method sets the image of the bundle to the inputted parameter
+     * @param image
+     */
     public void setBundleImage(Image image) {
         bundle_image = image;
     }
