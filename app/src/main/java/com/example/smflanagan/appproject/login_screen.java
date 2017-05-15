@@ -40,7 +40,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-
 /**
  * login_screen class: Java class that enables users to log into a google account using the Google sign-in API
  * Firebase is then authenticized with a user's unique Google ID Token
