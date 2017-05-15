@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-
-
 /**
  * add_bundle class: Java class that enables user to add and save a bundle
  * Also used to edit and save previously created bundles
