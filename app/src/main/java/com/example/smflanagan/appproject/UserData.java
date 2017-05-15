@@ -13,7 +13,7 @@ public class UserData {
     public UserData(String username) {
 
         user_name = username;
-       // user_location = location;
+        // user_location = location;
 
     }
 

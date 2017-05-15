@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 /**
  * ItemData class: Java class that serves a user-defined data type
- // Items include 5 parameters and act as a single data type
+ * // Items include 5 parameters and act as a single data type
  */
 public class ItemData {
 
@@ -35,6 +35,7 @@ public class ItemData {
 
     /**
      * Constructs a new ItemData according to parameters inputted in creation
+     *
      * @param name
      * @param cost
      * @param seller
@@ -61,6 +62,7 @@ public class ItemData {
 
     /**
      * Method returns only the name of the item
+     *
      * @return
      */
     public String getItemName() {
@@ -69,6 +71,7 @@ public class ItemData {
 
     /**
      * Method returns only the cost of the item
+     *
      * @return
      */
     public double getItemCost() {
@@ -77,6 +80,7 @@ public class ItemData {
 
     /**
      * Method returns only the seller of the item
+     *
      * @return
      */
     public String getSeller() {
@@ -85,6 +89,7 @@ public class ItemData {
 
     /**
      * Method returns only the location of the item
+     *
      * @return
      */
     public String getItemLocation() {
@@ -93,6 +98,7 @@ public class ItemData {
 
     /**
      * Method returns only the image of the item
+     *
      * @return
      */
     public Image getItemImage() {
@@ -101,6 +107,7 @@ public class ItemData {
 
     /**
      * Method sets the name of the item to the inputted parameter
+     *
      * @param name
      */
     public void setItemName(String name) {
@@ -109,6 +116,7 @@ public class ItemData {
 
     /**
      * Method sets the cost of the item to the inputted parameter
+     *
      * @param cost
      */
     public void setItemCost(Double cost) {
@@ -117,6 +125,7 @@ public class ItemData {
 
     /**
      * Method sets the seller of the item to the inputted parameter
+     *
      * @param seller
      */
     public void setSeller(String seller) {
@@ -125,6 +134,7 @@ public class ItemData {
 
     /**
      * Method sets the location of the item to the inputted parameter
+     *
      * @param location
      */
     public void setItemLocation(String location) {
@@ -133,6 +143,7 @@ public class ItemData {
 
     /**
      * Method sets the image of the item to the inputted parameter
+     *
      * @param image
      */
     public void setItemImage(Image image) {

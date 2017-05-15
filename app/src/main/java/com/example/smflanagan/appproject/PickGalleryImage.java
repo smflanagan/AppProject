@@ -1,17 +1,17 @@
 package com.example.smflanagan.appproject;
 
 
-        import android.app.Activity;
-        import android.content.Intent;
-        import android.database.Cursor;
-        import android.graphics.BitmapFactory;
-        import android.net.Uri;
-        import android.os.Bundle;
-        import android.provider.MediaStore;
-        import android.util.Log;
-        import android.view.View;
-        import android.widget.ImageView;
-        import android.widget.Toast;
+import android.app.Activity;
+import android.content.Intent;
+import android.database.Cursor;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 public class PickGalleryImage extends Activity {
     private static int RESULT_LOAD_IMG = 1;
@@ -43,7 +43,7 @@ public class PickGalleryImage extends Activity {
                 // Get the Image from data
 
                 Uri selectedImage = data.getData();
-                String[] filePathColumn = { MediaStore.Images.Media.DATA };
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
                 // Get the cursor
                 Cursor cursor = getContentResolver().query(selectedImage,

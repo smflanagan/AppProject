@@ -44,6 +44,7 @@ public class add_item extends AppCompatActivity {
 
     /**
      * Method sets layout for screen and accesses Firebase
+     *
      * @param savedInstanceState
      */
     @Override
@@ -56,6 +57,7 @@ public class add_item extends AppCompatActivity {
 
     /**
      * Method enables user to load an image from a separate photo app
+     *
      * @param view
      */
     public void loadImagefromGallery(View view) {
@@ -105,6 +107,7 @@ public class add_item extends AppCompatActivity {
     /**
      * Method brings the user to created_item class when "Create Item" button is pushed (through method createItem)
      * putExtra methods take the user input and carry it to the created_item class where it is then displayed
+     *
      * @param view
      */
     public void toViewItem(View view) {
@@ -120,6 +123,7 @@ public class add_item extends AppCompatActivity {
      * Method assigns each variable to user input for each category
      * An item is created using the inputted data
      * Method then brings the user to created_item class when "Create Item" button is pushed by calling method toViewItem
+     *
      * @param view
      */
     public void createItem(View view) {

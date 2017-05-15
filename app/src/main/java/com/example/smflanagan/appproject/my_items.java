@@ -55,8 +55,9 @@ public class my_items extends AppCompatActivity {
     /**
      * Method sets layout and references Firebase to create ListView
      * Commented out section displays alternate method to obtaining values for the array shown in ListView using putExtra methods
-     *  The issue with this is that the class can only be loaded after creating a new item
-     *  Using Firebase allows the data to be accessed everywhere without restrictions
+     * The issue with this is that the class can only be loaded after creating a new item
+     * Using Firebase allows the data to be accessed everywhere without restrictions
+     *
      * @param savedInstanceState
      */
     @Override
@@ -81,8 +82,7 @@ public class my_items extends AppCompatActivity {
 
         myRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
+            public void onDataChange(DataSnapshot dataSnapshot) {
                 updateItems(dataSnapshot);
             }
 
@@ -153,6 +153,7 @@ public class my_items extends AppCompatActivity {
 
     /**
      * Method brings user to add_item class when "Add New Item" button is pressed
+     *
      * @param view
      */
     public void toAddItemFromMyItems(View view) {
@@ -162,6 +163,7 @@ public class my_items extends AppCompatActivity {
 
     /**
      * Updates ListView of items
+     *
      * @param ds
      */
     public void updateItems(DataSnapshot ds) {

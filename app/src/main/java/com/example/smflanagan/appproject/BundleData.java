@@ -22,6 +22,7 @@ public class BundleData {
 
     /**
      * Constructs a new BundleData according to parameters inputted in creation
+     *
      * @param name
      * @param discount
      * @param item
@@ -61,6 +62,7 @@ public class BundleData {
 
     /**
      * Method adds a new item to the bundle
+     *
      * @param item
      */
     public void addItem(ItemData item) {
@@ -70,6 +72,7 @@ public class BundleData {
 
     /**
      * Method removes an item from the bundle
+     *
      * @param item
      */
     public void removeItem(ItemData item) {
@@ -79,6 +82,7 @@ public class BundleData {
 
     /**
      * Method returns only the name of the bundle
+     *
      * @return
      */
     public String getBundleName() {
@@ -87,6 +91,7 @@ public class BundleData {
 
     /**
      * Method returns only the cost of the bundle
+     *
      * @return
      */
     public double getBundleCost() {
@@ -102,6 +107,7 @@ public class BundleData {
 
     /**
      * Method returns only the seller of the bundle
+     *
      * @return
      */
     public String getSeller() {
@@ -110,6 +116,7 @@ public class BundleData {
 
     /**
      * Method returns only the location of the bundle
+     *
      * @return
      */
     public String getBundleLocation() {
@@ -118,6 +125,7 @@ public class BundleData {
 
     /**
      * Method returns only the image of the bundle
+     *
      * @return
      */
     public Image getBundleImage() {
@@ -126,6 +134,7 @@ public class BundleData {
 
     /**
      * Method sets the name of the bundle to the inputted parameter
+     *
      * @return
      */
     public void setBundleName(String name) {
@@ -134,6 +143,7 @@ public class BundleData {
 
     /**
      * Method sets the seller of the bundle to the inputted parameter
+     *
      * @param seller
      */
     public void setSeller(String seller) {
@@ -142,6 +152,7 @@ public class BundleData {
 
     /**
      * Method sets the location of the bundle to the inputted parameter
+     *
      * @param location
      */
     public void setLocation(String location) {
@@ -150,6 +161,7 @@ public class BundleData {
 
     /**
      * Method sets the image of the bundle to the inputted parameter
+     *
      * @param image
      */
     public void setBundleImage(Image image) {

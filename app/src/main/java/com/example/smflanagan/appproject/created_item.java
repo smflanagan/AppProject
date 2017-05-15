@@ -22,6 +22,7 @@ public class created_item extends AppCompatActivity {
 
     /**
      * Sets variables equal to input from add_item class and displays the values upon creation of the class
+     *
      * @param savedInstanceState
      */
     @Override
@@ -41,6 +42,7 @@ public class created_item extends AppCompatActivity {
 
     /**
      * Method displays the item name
+     *
      * @param itemNameInput
      */
     public void displayItemName(String itemNameInput) {
@@ -50,6 +52,7 @@ public class created_item extends AppCompatActivity {
 
     /**
      * Method displays the item cost
+     *
      * @param itemCostInput
      */
     public void displayItemCost(String itemCostInput) {
@@ -59,6 +62,7 @@ public class created_item extends AppCompatActivity {
 
     /**
      * Method displays the item seller
+     *
      * @param sellerInput
      */
     public void displaySeller(String sellerInput) {
@@ -68,6 +72,7 @@ public class created_item extends AppCompatActivity {
 
     /**
      * Method displas the item location
+     *
      * @param locationInput
      */
     public void displayItemLocation(String locationInput) {
@@ -79,10 +84,10 @@ public class created_item extends AppCompatActivity {
      * Method brings user to my_items class when "My Items" button is pushed
      * Commented out putExtra methods are not necessary with the implementation of the Firebase API
      * Without Firebase, this information would be brought to the my_items class using putExtras methods
+     *
      * @param view
      */
-    public void toMyItemsFromCreated(View view)
-    {
+    public void toMyItemsFromCreated(View view) {
         Intent intent = new Intent(this, my_items.class);
         /*
         intent.putExtra("name",name);
@@ -95,10 +100,10 @@ public class created_item extends AppCompatActivity {
 
     /**
      * Method brings user to add_bundle class when "Add To Bundle" button is pushed
+     *
      * @param view
      */
-    public void toAddBundleFromCreated(View view)
-    {
+    public void toAddBundleFromCreated(View view) {
         Intent intent = new Intent(this, add_bundle.class);
         startActivity(intent);
     }

@@ -15,6 +15,7 @@ public class save_bundle extends AppCompatActivity {
 
     /**
      * Sets layout when save_bundle screen is loaded
+     *
      * @param savedInstanceState
      */
     @Override
@@ -26,10 +27,10 @@ public class save_bundle extends AppCompatActivity {
     /**
      * Method that saves user inputted data as bundle name when button "Save" is pressed
      * Method also brings user to my_bundle class
+     *
      * @param view
      */
-    public void saveBundleName(View view)
-    {
+    public void saveBundleName(View view) {
         EditText bundle_name = (EditText) findViewById(R.id.EnterBundleName);
         bundleName = bundle_name.getText().toString();
         Intent intent = new Intent(this, add_bundle.class);

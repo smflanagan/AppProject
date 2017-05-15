@@ -13,6 +13,7 @@ public class add_bundle extends AppCompatActivity {
 
     /**
      * Sets the layout when add_bundle screen is loaded
+     *
      * @param savedInstanceState
      */
     @Override
@@ -23,10 +24,10 @@ public class add_bundle extends AppCompatActivity {
 
     /**
      * Method brings user to add_item class when "Add Item" button is pressed
+     *
      * @param view
      */
-    public void toAddItem(View view)
-    {
+    public void toAddItem(View view) {
         Intent intent = new Intent(this, add_item.class);
         startActivity(intent);
     }
@@ -34,20 +35,20 @@ public class add_bundle extends AppCompatActivity {
     /**
      * Method brings user to save_bundle class when "Save Bundle" button is pressed
      * In save_bundle class, user is able to save a bundle they have created or edited
+     *
      * @param view
      */
-    public void toSaveBundle(View view)
-    {
+    public void toSaveBundle(View view) {
         Intent intent = new Intent(this, save_bundle.class);
         startActivity(intent);
     }
 
     /**
      * Method brings user to my_items class when "My Items" button is pressed
+     *
      * @param view
      */
-    public void toMyItemsFromAddBundle(View view)
-    {
+    public void toMyItemsFromAddBundle(View view) {
         Intent intent = new Intent(this, my_items.class);
         startActivity(intent);
     }

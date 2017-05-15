@@ -223,6 +223,7 @@ public class login_screen extends BaseActivity implements
 
     /**
      * Initiates one of the 3 methods depening on the button that is clicked by the user
+     *
      * @param v
      */
     @Override
