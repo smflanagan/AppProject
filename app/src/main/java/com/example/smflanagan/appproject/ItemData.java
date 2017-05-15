@@ -1,16 +1,6 @@
 package com.example.smflanagan.appproject;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.media.Image;
-import android.net.Uri;
-import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 /**
  * ItemData class: Java class that serves a user-defined data type

@@ -20,22 +20,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".add_item"
+            android:name=".AddItem"
             android:label="@string/title_activity_add_item"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".add_bundle"
+            android:name=".AddBundle"
             android:label="@string/title_activity_add_bundle"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".created_item" />
-        <activity android:name=".login_screen" />
+        <activity android:name=".CreatedItem" />
+        <activity android:name=".LoginScreen" />
 
         <uses-feature
             android:name="android.hardware.camera"
             android:required="true" />
 
-        <activity android:name=".my_items" />
-        <activity android:name=".save_bundle"></activity>
+        <activity android:name=".MyItems" />
+        <activity android:name=".SaveBundle"></activity>
     </application>
 
 </manifest>

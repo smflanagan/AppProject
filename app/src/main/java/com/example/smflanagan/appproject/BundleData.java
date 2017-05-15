@@ -25,21 +25,16 @@ public class BundleData {
      *
      * @param name
      * @param discount
-     * @param item
      * @param location
-     * @param image
      * @param seller_name
      */
-    public BundleData(String name, double discount, ItemData item, String location, Image image, String seller_name) {
+    public BundleData(String name, double discount, String location, String seller_name) {
 
         bundle_name = name;
         bundle_discount = discount;
 
-        item_list = new ArrayList<ItemData>();
-        item_list.add(item);
-
         location_data = location;
-        bundle_image = image;
+        // bundle_image = image;
 
 
     }

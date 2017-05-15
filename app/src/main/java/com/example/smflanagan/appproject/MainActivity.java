@@ -1,10 +1,9 @@
 package com.example.smflanagan.appproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 
 /**
  * MainActivity class: Java class for the main screen that the user sees when the app initially builds
@@ -22,22 +21,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Method brings user to add_item class when button "Add Item" is pushed
+     * Method brings user to AddItem class when button "Add Item" is pushed
      *
      * @param view
      */
     public void toAddItem(View view) {
-        Intent intent = new Intent(this, add_item.class);
+        Intent intent = new Intent(this, AddItem.class);
         startActivity(intent);
     }
 
     /**
-     * Method brings user to add_bundle class when button "Add Bundle" is pushed
+     * Method brings user to AddBundle class when button "Add Bundle" is pushed
      *
      * @param view
      */
     public void toAddBundle(View view) {
-        Intent intent = new Intent(this, add_bundle.class);
+        Intent intent = new Intent(this, AddBundle.class);
         startActivity(intent);
     }
 
@@ -47,17 +46,17 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void toLoginScreen(View view) {
-        Intent intent = new Intent(this, login_screen.class);
+        Intent intent = new Intent(this, LoginScreen.class);
         startActivity(intent);
     }
 
     /**
-     * Method brings user to my_items class when button "My Items" is pushed
+     * Method brings user to MyItems class when button "My Items" is pushed
      *
      * @param view
      */
     public void toMyItems(View view) {
-        Intent intent = new Intent(this, my_items.class);
+        Intent intent = new Intent(this, MyItems.class);
         startActivity(intent);
     }
 }
