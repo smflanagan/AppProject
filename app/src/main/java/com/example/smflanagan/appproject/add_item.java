@@ -15,35 +15,51 @@ import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-// add_item class: Java class adds a new item to a specific user's list of items
-// User inputs data for name, cost, and location of item
+/**
+ * add_item class: Java class adds a new item to a specific user's list of items
+ * User inputs data for name, cost, and location of item
+ */
 public class add_item extends AppCompatActivity {
 
-    // Class variables for image component of item
+    /**
+     * Class variables for image component of item
+     */
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
 
-    // Class variables for each of 4 text components of an item and variable for cost as a numerical value
-    public String name;
-    public String cost_string;
-    public double cost;
-    public String seller;
-    public String location;
+    /**
+     * Class variables for each of 4 text components of an item and variable for cost as a numerical value
+     */
+    private String name;
+    private String cost_string;
+    private double cost;
+    private String seller;
+    private String location;
 
-    // Class variables necessary to interact with Firebase in class
+    /**
+     * Class variables necessary to interact with Firebase in class
+     */
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
-    // Method sets layout for screen and accesses Firebase
+    /**
+     * Method sets layout for screen and accesses Firebase
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_item);
         database = FirebaseDatabase.getInstance();
-        myRef = database.getReference(seller);
+        myRef = database.getReference("Items");
     }
 
-    // Method enables user to load an image from a separate photo app
+    /**
+     * Method enables user to load an image from a separate photo app
+     *
+     * @param view
+     */
     public void loadImagefromGallery(View view) {
         // Create intent to Open Image applications like Gallery, Google Photos
         Intent galleryIntent = new Intent(Intent.ACTION_PICK,
@@ -88,8 +104,12 @@ public class add_item extends AppCompatActivity {
 
     }
 
-    // Method brings the user to created_item class when "Create Item" button is pushed (through method createItem)
-    // putExtra methods take the user input and carry it to the created_item class where it is then displayed
+    /**
+     * Method brings the user to created_item class when "Create Item" button is pushed (through method createItem)
+     * putExtra methods take the user input and carry it to the created_item class where it is then displayed
+     *
+     * @param view
+     */
     public void toViewItem(View view) {
         Intent intent = new Intent(this, created_item.class);
         intent.putExtra("name", name);
@@ -99,21 +119,25 @@ public class add_item extends AppCompatActivity {
         startActivity(intent);
     }
 
-    // Method assigns each variable to user input for each category
-    // An item is created using the inputted data
-    // Method then brings the user to created_item class when "Create Item" button is pushed by calling method toViewItem
+    /**
+     * Method assigns each variable to user input for each category
+     * An item is created using the inputted data
+     * Method then brings the user to created_item class when "Create Item" button is pushed by calling method toViewItem
+     *
+     * @param view
+     */
     public void createItem(View view) {
-        EditText item_name = (EditText) findViewById(R.id.ItemNameView);
+        EditText item_name = (EditText) findViewById(R.id.EnterItemName);
         name = item_name.getText().toString();
 
-        EditText item_cost = (EditText) findViewById(R.id.ItemCost);
+        EditText item_cost = (EditText) findViewById(R.id.EnterItemCost);
         cost_string = item_cost.getText().toString();
         cost = Double.parseDouble(cost_string);
 
         EditText seller_name = (EditText) findViewById(R.id.EnterBundleName);
         seller = seller_name.getText().toString();
 
-        EditText seller_location = (EditText) findViewById(R.id.Location);
+        EditText seller_location = (EditText) findViewById(R.id.EnterLocation);
         location = seller_location.getText().toString();
 
         ItemData test = new ItemData(name, cost, seller, location);

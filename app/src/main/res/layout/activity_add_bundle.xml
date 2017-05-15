@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.smflanagan.appproject.add_bundle">
+    tools:context="com.example.smflanagan.appproject.AddBundle">
 
 
     <LinearLayout
@@ -15,36 +15,29 @@
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="7dp">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/SaveBundle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
-
-            <Button
-                android:id="@+id/SaveBundle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:onClick="toSaveBundle"
-                android:text="@string/save_bundle"
-                android:background="#4169E1"
-                android:textColor="#FFFAFA"
-                tools:ignore="InefficientWeight" />
-        </LinearLayout>
+            android:layout_margin="5dp"
+            android:background="#4169E1"
+            android:onClick="toSaveBundle"
+            android:text="@string/save_bundle"
+            android:textColor="#FFFAFA" />
 
         <Button
             android:id="@+id/AddExisitingItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toMyItemsFromAddBundle"
-            android:text="@string/add_existing_item"
             android:layout_margin="5dp"
             android:background="#4169E1"
+            android:onClick="toMyItemsFromAddBundle"
+            android:text="@string/add_existing_item"
             android:textColor="#FFFAFA" />
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 

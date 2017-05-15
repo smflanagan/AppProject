@@ -10,24 +10,36 @@
         android:layout_width="0dp"
         android:layout_height="495dp"
         android:orientation="vertical"
-        tools:layout_editor_absoluteY="8dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="8dp">
 
         <Button
             android:id="@+id/AddAnotherItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="toAddItemFromMyItems"
-            android:text="@string/add_item"
             android:layout_margin="5dp"
             android:background="#4169E1"
+            android:onClick="toAddItemFromMyItems"
+            android:text="@string/add_item"
             android:textColor="#FFFAFA" />
+
+        <EditText
+            android:id="@+id/Search"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:hint="Search Items"
+            android:inputType="textVisiblePassword"
+            tools:ignore="HardcodedText" />
 
         <ListView
             android:id="@+id/ItemList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
             android:divider="@drawable/black_line"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="8dp"

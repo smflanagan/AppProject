@@ -40,16 +40,17 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-// login_screen class: Java class that enables users to log into a google account using the Google sign-in API
-// Firebase is then authenticized with a user's unique Google ID Token
-// This allows every user to possess their own unique set of items and bundles they are able to post
+/**
+ * login_screen class: Java class that enables users to log into a google account using the Google sign-in API
+ * Firebase is then authenticized with a user's unique Google ID Token
+ * This allows every user to possess their own unique set of items and bundles they are able to post
+ */
 public class login_screen extends BaseActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
     private static final String TAG = "GoogleActivity";
     private static final int RC_SIGN_IN = 9001;
-    public String USER;
 
     // [START declare_auth]
     private FirebaseAuth mAuth;
@@ -220,7 +221,11 @@ public class login_screen extends BaseActivity implements
         Toast.makeText(this, "Google Play Services error.", Toast.LENGTH_SHORT).show();
     }
 
-    // Initiates one of the 3 methods depening on the button that is clicked by the user
+    /**
+     * Initiates one of the 3 methods depening on the button that is clicked by the user
+     *
+     * @param v
+     */
     @Override
     public void onClick(View v) {
         int i = v.getId();
@@ -232,7 +237,6 @@ public class login_screen extends BaseActivity implements
             revokeAccess();
         }
     }
-
 
 
 }
