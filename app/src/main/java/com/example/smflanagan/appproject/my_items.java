@@ -23,15 +23,21 @@ import java.util.ArrayList;
 
 import static com.example.smflanagan.appproject.R.layout.activity_my_items;
 
-// my_items class: Java class collects all of a user's items and displays them in a list view
-// From this class, users are able to identify all of their items and add any item to a specific bundle
+/**
+ * my_items class: Java class collects all of a user's items and displays them in a list view
+ * From this class, users are able to identify all of their items and add any item to a specific bundle
+ */
 public class my_items extends AppCompatActivity {
 
-    // Class variables required for Firebase implementation
+    /**
+     * Class variables required for Firebase implementation
+     */
     private FirebaseDatabase database;
     private DatabaseReference myRef;
 
-    // Class variables allow for item data to be transferred into a ListView containing strings that display item contents
+    /**
+     * Class variables allow for item data to be transferred into a ListView containing strings that display item contents
+     */
     private String itemName;
     private double itemCost;
     private String itemCostString;
@@ -46,10 +52,13 @@ public class my_items extends AppCompatActivity {
 
     EditText search;
 
-    // Method sets layout and references Firebase to create ListView
-    // Commented out section displays alternate method to obtaining values for the array shown in ListView using putExtra methods
-    // The issue with this is that the class can only be loaded after creating a new item
-    // Using Firebase allows the data to be accessed everywhere without restrictions
+    /**
+     * Method sets layout and references Firebase to create ListView
+     * Commented out section displays alternate method to obtaining values for the array shown in ListView using putExtra methods
+     *  The issue with this is that the class can only be loaded after creating a new item
+     *  Using Firebase allows the data to be accessed everywhere without restrictions
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,7 +92,8 @@ public class my_items extends AppCompatActivity {
             }
         });
 
-        /*Bundle bundle = getIntent().getExtras();
+        /*
+        Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             itemName = bundle.getString("name");
             itemCost = bundle.getString("cost");
@@ -105,7 +115,7 @@ public class my_items extends AppCompatActivity {
             itemList.setAdapter(arrayAdapter);
         } else
             allItemData = "";
-            */
+        */
 
         myRef.addChildEventListener(new ChildEventListener() {
             // When an item is added, ListView updates to incorporate new item
@@ -141,13 +151,19 @@ public class my_items extends AppCompatActivity {
 
     }
 
-    // Method brings user to add_item class when "Add New Item" button is pressed
+    /**
+     * Method brings user to add_item class when "Add New Item" button is pressed
+     * @param view
+     */
     public void toAddItemFromMyItems(View view) {
         Intent intent = new Intent(this, add_item.class);
         startActivity(intent);
     }
 
-    // Updates ListView of items
+    /**
+     * Updates ListView of items
+     * @param ds
+     */
     public void updateItems(DataSnapshot ds) {
         ItemData item;
         for (DataSnapshot data : ds.getChildren()) {
