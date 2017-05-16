@@ -4,7 +4,6 @@ package com.example.smflanagan.appproject;
  * Created by smflanagan on 3/28/2017.
  * Test
  */
-
 public class UserData {
 
     private String user_name;

@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+
 public class PickGalleryImage extends Activity {
     private static int RESULT_LOAD_IMG = 1;
     String imgDecodableString;

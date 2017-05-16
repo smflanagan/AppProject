@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
  * add_item class: Java class adds a new item to a specific user's list of items
  * User inputs data for name, cost, and location of item
  */
+
 public class add_item extends AppCompatActivity {
 
     /**

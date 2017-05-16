@@ -10,6 +10,7 @@ import android.widget.TextView;
  * created_item class: Java class that displays the contents of a user created item
  * Values for item components is taken from user inputted data in add_item class
  */
+
 public class created_item extends AppCompatActivity {
 
     /**

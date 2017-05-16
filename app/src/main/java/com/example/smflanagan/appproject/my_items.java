@@ -27,6 +27,7 @@ import static com.example.smflanagan.appproject.R.layout.activity_my_items;
  * my_items class: Java class collects all of a user's items and displays them in a list view
  * From this class, users are able to identify all of their items and add any item to a specific bundle
  */
+
 public class my_items extends AppCompatActivity {
 
     /**

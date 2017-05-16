@@ -45,6 +45,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
  * Firebase is then authenticized with a user's unique Google ID Token
  * This allows every user to possess their own unique set of items and bundles they are able to post
  */
+
 public class login_screen extends BaseActivity implements
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
