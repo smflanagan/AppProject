@@ -164,10 +164,10 @@ public class my_items extends AppCompatActivity {
 
     /**
      * Method brings user to MainActivity class when "Home" button is pressed
+     *
      * @param view
      */
-    public void toMainActivityFromMyItems(View view)
-    {
+    public void toMainActivityFromMyItems(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
