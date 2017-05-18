@@ -44,6 +44,7 @@
                 android:onClick="toAddBundle"
                 android:text="@string/add_bundle"
                 tools:ignore="ButtonStyle,RtlHardcoded" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -58,7 +59,7 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="#4169E1"
-                android:drawableLeft="@drawable/item_icon"
+                android:drawableLeft="@drawable/item_icon2"
                 android:onClick="toMyItems"
                 android:text="@string/my_items"
                 android:textColor="#FFFAFA"
@@ -71,7 +72,8 @@
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="#4169E1"
-                android:drawableLeft="@drawable/bundle_icon2"
+                android:drawableLeft="@drawable/bundle_icon"
+                android:onClick="toMyBundles"
                 android:text="@string/my_bundles"
                 android:textColor="#FFFAFA"
                 tools:ignore="ButtonStyle,RtlHardcoded" />
@@ -82,7 +84,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:orientation="vertical">
+            android:layout_weight="1"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp"
+            tools:ignore="InefficientWeight">
 
             <ImageView
                 android:id="@+id/GoogleImage"

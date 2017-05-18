@@ -6,4 +6,21 @@
     android:layout_height="match_parent"
     tools:context="com.example.smflanagan.appproject.MyBundles">
 
+    <LinearLayout
+        android:layout_width="584dp"
+        android:layout_height="807dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <Button
+            android:id="@+id/HomeFromMyBundles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#4169E1"
+            android:onClick="toHomeFromMyBundles"
+            android:text="@string/home"
+            android:textColor="#FFFAFA" />
+    </LinearLayout>
 </android.support.constraint.ConstraintLayout>

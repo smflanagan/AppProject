@@ -44,6 +44,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
+     * Method brings user to MyBundles class when button "My Bundles" is pressed
+     *
+     * @param view
+     */
+    public void toMyBundles(View view) {
+        Intent intent = new Intent(this, MyBundles.class);
+        startActivity(intent);
+    }
+
+    /**
      * Method brings user to login class when button "Login" is pushed
      *
      * @param view
