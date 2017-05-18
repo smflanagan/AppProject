@@ -33,6 +33,12 @@ public class add_bundle extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void toMainActivityFromAddBundle(View view)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     /**
      * Method brings user to save_bundle class when "Save Bundle" button is pressed
      * In save_bundle class, user is able to save a bundle they have created or edited

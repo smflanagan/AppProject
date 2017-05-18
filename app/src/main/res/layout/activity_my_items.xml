@@ -24,6 +24,16 @@
             android:text="@string/add_item"
             android:textColor="#FFFAFA" />
 
+        <Button
+            android:id="@+id/HomeFromMyItems"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#4169E1"
+            android:onClick="toMainActivityFromMyItems"
+            android:text="@string/home"
+            android:textColor="#FFFAFA" />
+
         <EditText
             android:id="@+id/Search"
             android:layout_width="fill_parent"

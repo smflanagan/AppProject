@@ -35,6 +35,16 @@
             android:text="@string/add_existing_item"
             android:textColor="#FFFAFA" />
 
+        <Button
+            android:id="@+id/HomeFromAddBundle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="#4169E1"
+            android:onClick="toMainActivityFromAddBundle"
+            android:text="@string/home"
+            android:textColor="#FFFAFA" />
+
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
