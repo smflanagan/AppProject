@@ -13,6 +13,11 @@ public class MyBundles extends AppCompatActivity {
         setContentView(R.layout.activity_my_bundles);
     }
 
+    /**
+     * Method brings user to MainActivity class when "Home" button is pressed
+     *
+     * @param view
+     */
     public void toHomeFromMyBundles(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
